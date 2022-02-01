@@ -126,7 +126,7 @@ import { PropType, defineComponent, ref, computed } from 'vue';
 import { getAddress } from '@ethersproject/address';
 import { AddressZero } from '@ethersproject/constants';
 import { Pool, Swap } from '@balancer-labs/sor/dist/types';
-import { SwapV2, SubgraphPoolBase } from '@balancer-labs/sdk';
+import { SwapV2, SubgraphPoolBase } from '@koil-finance/sdk';
 
 import useNumbers, { FNumFormats } from '@/composables/useNumbers';
 import { SorReturn } from '@/lib/utils/balancer/helpers/sor/sorManager';
@@ -134,7 +134,7 @@ import { useI18n } from 'vue-i18n';
 import useWeb3 from '@/services/web3/useWeb3';
 import useTokens from '@/composables/useTokens';
 import { NATIVE_ASSET_ADDRESS } from '@/constants/tokens';
-import { Network } from '@balancer-labs/sdk';
+import { Network } from '@koil-finance/sdk';
 
 interface Route {
   share: number;
@@ -434,13 +434,10 @@ export default defineComponent({
     function getPoolLink(id: string): string {
       const chainId = appNetworkConfig.chainId;
       const prefixMap = {
-        [Network.MAINNET]: 'app.',
-        [Network.KOVAN]: 'kovan.',
-        [Network.POLYGON]: 'polygon.',
-        [Network.ARBITRUM]: 'arbitrum.'
+        [Network.FUSE]: 'app.'
       };
       const prefix = prefixMap[chainId] || '';
-      if (props.sorReturn.isV1swap && chainId === 1) {
+      if (props.sorReturn.isV1swap && chainId === 122) {
         return `https://pools.balancer.exchange/#/pool/${id}`;
       } else {
         return props.sorReturn.isV1swap

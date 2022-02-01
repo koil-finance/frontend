@@ -70,22 +70,10 @@ export default defineComponent({
     // DATA
     const networks = [
       {
-        id: 'ethereum',
-        name: 'Ethereum',
+        id: 'fuse',
+        name: 'Fuse',
         subdomain: 'app',
-        key: '1'
-      },
-      {
-        id: 'polygon',
-        name: 'Polygon',
-        subdomain: 'polygon',
-        key: '137'
-      },
-      {
-        id: 'arbitrum',
-        name: 'Arbitrum',
-        subdomain: 'arbitrum',
-        key: '42161'
+        key: '122'
       }
     ];
 
@@ -94,7 +82,7 @@ export default defineComponent({
       .includes(configService.network.key);
 
     const activeNetwork = networks.find(network => {
-      if (!appNetworkSupported && network.id === 'ethereum') return true;
+      if (!appNetworkSupported && network.id === 'fuse') return true;
       return isActive(network);
     });
 
@@ -108,7 +96,7 @@ export default defineComponent({
     }
 
     function isActive(network: Network): boolean {
-      if (!appNetworkSupported && network.id === 'ethereum') return true;
+      if (!appNetworkSupported && network.id === 'fuse') return true;
       return configService.network.key === network.key;
     }
 

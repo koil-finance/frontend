@@ -3,7 +3,7 @@
     <template v-if="isWalletReady">
       <div class="px-4 lg:px-0">
         <BalStack horizontal justify="between" align="center">
-          <h3>{{ $t('myV2Investments') }}</h3>
+          <h3>{{ $t('myInvestments') }}</h3>
           <BalBtn @click="navigateToCreatePool" color="blue" size="sm">{{
             $t('createAPool.title')
           }}</BalBtn>

@@ -1,22 +1,16 @@
 import { configService } from '@/services/config/config.service';
-import { BalancerSDK, Network } from '@balancer-labs/sdk';
+import { KoilSDK, Network } from '@koil-finance/sdk';
 
 const network = ((): Network => {
   switch (configService.network.key) {
-    case '1':
-      return Network.MAINNET;
-    case '42':
-      return Network.KOVAN;
-    case '137':
-      return Network.POLYGON;
-    case '42161':
-      return Network.ARBITRUM;
+    case '122':
+      return Network.FUSE;
     default:
-      return Network.MAINNET;
+      return Network.FUSE;
   }
 })();
 
-export const balancer = new BalancerSDK({
+export const balancer = new KoilSDK({
   network,
   rpcUrl: configService.rpc
 });

@@ -1,0 +1,63 @@
+{
+  "key": "122",
+  "chainId": 122,
+  "chainName": "Fuse",
+  "name": "Fuse Mainnet",
+  "shortName": "Mainnet",
+  "network": "fuse",
+  "portisNetwork": "fuse",
+  "unknown": false,
+  "rpc": "https://rpc.fuse.io",
+  "ws": "wss://explorer.fuse.io/socket/websocket",
+  "loggingRpc": "https://rpc.fuse.io",
+  "explorer": "https://explorer.fuse.io",
+  "explorerName": "Fuse Explorer",
+  "poolsUrlV1": "",
+  "poolsUrlV2": "",
+  "subgraph": "https://api.thegraph.com/subgraphs/name/koil-finance/koil-finance",
+  "subgraphs": {
+    "aave": ""
+  },
+  "supportsEIP1559": true,
+  "nativeAsset": {
+    "name": "Fuse",
+    "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+    "symbol": "FUSE",
+    "decimals": 18,
+    "deeplinkId": "fuse",
+    "logoURI": "https://explorer.fuse.io/images/fuse_logo-0346e93ebb763ba41076456a9f0bf943.svg?vsn=d",
+    "minTransactionBuffer": "0.05"
+  },
+  "addresses": {
+    "exchangeProxy": "",
+    "merkleRedeem": "",
+    "merkleOrchard": "0xE8DAEA960b658554145FfD7Ce8888052C680522D",
+    "multicall": "0x133D83f1B2D7830816C80F907bbEf923CBc361Bc",
+    "authorizer": "0x590F2926bb51834946F0272cC059d6984f81e4E5",
+    "vault": "0x48F76d2Be0f335b2be88589A1889d5198E6B3551",
+    "weightedPoolFactory": "0x13A1d2A9F729cDc485050c53b79689eE9131D898",
+    "stablePoolFactory": "0xb0Bf8981B8f814cFBA6507c84c8Daa7487aE3c9A",
+    "weth": "",
+    "stETH": "",
+    "wstETH": "",
+    "lidoRelayer": "",
+    "balancerHelpers": "0xEA6721381e75bB1c7B890EaCDAD8C14a9909C6f8",
+    "batchRelayer": "0xC668Dc58EB978b5fa9B4Ca415c58CDFc497d210E"
+  },
+  "strategies": {
+    "0": {
+      "type": "0",
+      "name": "stablePool"
+    },
+    "1": {
+      "type": "1",
+      "name": "weightedPool"
+    },
+    "2": {
+      "type": "2",
+      "name": "weightedPool"
+    }
+  },
+  "keys": {},
+  "supportsElementPools": true
+}
