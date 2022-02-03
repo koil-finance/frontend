@@ -4,24 +4,18 @@ import { coingeckoClient } from './coingecko.client';
 
 export const getNativeAssetId = (chainId: string): string => {
   const mapping = {
-    '1': 'ethereum',
-    '42': 'ethereum',
-    '137': 'matic-network',
-    '42161': 'ethereum'
+    '122': 'fuse-network-token'
   };
 
-  return mapping[chainId] || 'ethereum';
+  return mapping[chainId] || 'fuse-network-token';
 };
 
 export const getPlatformId = (chainId: string): string => {
   const mapping = {
-    '1': 'ethereum',
-    '42': 'ethereum',
-    '137': 'polygon-pos',
-    '42161': 'arbitrum-one'
+    '122': 'fuse'
   };
 
-  return mapping[chainId] || 'ethereum';
+  return mapping[chainId] || 'fuse';
 };
 
 export class CoingeckoService {

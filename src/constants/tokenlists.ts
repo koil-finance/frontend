@@ -17,12 +17,10 @@ export const TOKEN_LIST_MAP: TokenListMapByNetwork = {
   '122': {
     Balancer: {
       Default:
-        'https://storageapi.fleek.co/tomafrench-team-bucket/polygon.listed.tokenlist.json',
+        'https://storageapi.fleek.co/a667fff6-ded3-4ead-a644-e3562bed0a86-bucket/fuse.vetted.tokenlist.json',
       Vetted:
-        'https://storageapi.fleek.co/tomafrench-team-bucket/polygon.vetted.tokenlist.json'
+        'https://storageapi.fleek.co/a667fff6-ded3-4ead-a644-e3562bed0a86-bucket/fuse.vetted.tokenlist.json'
     },
-    External: [
-      'https://unpkg.com/quickswap-default-token-list@1.0.67/build/quickswap-default.tokenlist.json'
-    ]
+    External: []
   }
 };

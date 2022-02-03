@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="subsection">
-      <h1>Balancer Labs OU Terms of Use</h1>
-      <p><em>Last updated: November 23, 2021</em></p>
+      <h1>Koil Finance OU Terms of Use</h1>
+      <p><em>Last updated: February 3, 2022</em></p>
       <p>
         <em class="font-medium">
           Please do not access this site where such access is prohibited by
@@ -22,16 +22,15 @@
     <div class="subsection">
       <h2>1. Overview</h2>
       <p>
-        This Balancer Labs OU Terms of Use agreement (“Terms” or “agreement”)
-        (“Balancer Labs”, “we” and “us” refers to Balancer Labs OU) covers the
-        website, Balancer Protocol user-interface and free application
-        (collectively “the Site”) we own and administer, at times in conjunction
-        with others, which provides the ability to access the decentralized
-        Balancer Protocol. Additionally, you can access the Balancer Protocol
-        through third-party web or mobile interfaces. These Terms apply to you
-        (“You” or “you”) as a user of our Site including all the products,
-        services, tools and information, without limitation, made available on
-        the Site.
+        This Koil Finance OU Terms of Use agreement (“Terms” or “agreement”)
+        (“Koil Finance”, “we” and “us” refers to Koil Finance OU) covers the
+        website, Koil Protocol user-interface and free application (collectively
+        “the Site”) we own and administer, at times in conjunction with others,
+        which provides the ability to access the decentralized Koil Protocol.
+        Additionally, you can access the Koil Protocol through third-party web
+        or mobile interfaces. These Terms apply to you (“You” or “you”) as a
+        user of our Site including all the products, services, tools and
+        information, without limitation, made available on the Site.
       </p>
       <p>
         You must be able to form a legally binding contract online either as an
@@ -46,7 +45,7 @@
       </p>
       <p>
         You are advised to periodically review these Terms so you understand any
-        changes to the Terms. Balancer Labs in its sole discretion, reserves the
+        changes to the Terms. Koil Finance in its sole discretion, reserves the
         right to make changes to our Terms. Changes are binding on users of the
         Site and will take effect immediately upon posting. As a user, you agree
         to be bound by any changes, variations, or modifications to our Terms
@@ -73,28 +72,28 @@
     <div class="subsection">
       <h2>2. Site</h2>
       <p>
-        As part of the Site, Balancer Labs provides access to a decentralized
-        finance application (“Application” or “Balancer Protocol app”) on the
+        As part of the Site, Koil Finance provides access to a decentralized
+        finance application (“Application” or “Koil Protocol app”) on the
         Ethereum blockchain, that allows traders or liquidity providers of
         Ethereum assets (“Cryptocurrency Assets”) to transact using smart
-        contracts (“Smart Contracts”). Use of the Balancer Protocol may require
-        that you pay a fee, such as gas charges on the Ethereum network to
-        perform a transaction. You acknowledge and agree that Balancer Labs has
-        no control over any activities, transactions, the method of payment of
-        any transactions, or any actual processing of payments of transactions.
-        You must ensure that you have a sufficient balance to complete any
-        transaction on the Balancer Protocol before initiating such transaction.
+        contracts (“Smart Contracts”). Use of the Koil Protocol may require that
+        you pay a fee, such as gas charges on the Ethereum network to perform a
+        transaction. You acknowledge and agree that Koil Finance has no control
+        over any activities, transactions, the method of payment of any
+        transactions, or any actual processing of payments of transactions. You
+        must ensure that you have a sufficient balance to complete any
+        transaction on the Koil Protocol before initiating such transaction.
       </p>
       <p>
-        You acknowledge and agree that Balancer Labs has no control over any
-        transactions conducted through the Balancer Protocol, the method of
-        payment of any transactions or any actual payments of transactions
-        including use of any third-party services such as Metamask, or other
-        wallet services. Likewise, you must ensure that you have a sufficient
-        balance of the applicable cryptocurrency tokens stored at your Balancer
-        Protocol-compatible wallet address (“Cryptocurrency Wallet”) to complete
-        any transaction on the Balancer Protocol or the Ethereum network before
-        initiating such transaction.
+        You acknowledge and agree that Koil Finance has no control over any
+        transactions conducted through the Koil Protocol, the method of payment
+        of any transactions or any actual payments of transactions including use
+        of any third-party services such as Metamask, or other wallet services.
+        Likewise, you must ensure that you have a sufficient balance of the
+        applicable cryptocurrency tokens stored at your Koil Protocol-compatible
+        wallet address (“Cryptocurrency Wallet”) to complete any transaction on
+        the Koil Protocol or the Ethereum network before initiating such
+        transaction.
       </p>
     </div>
     <div class="subsection">
@@ -172,7 +171,7 @@
           unlawful;
         </li>
         <li>
-          Export, reexport, or transfer, directly or indirectly, any Balancer
+          Export, reexport, or transfer, directly or indirectly, any Koil
           technology in violation of applicable export laws or regulations;
         </li>
         <li>
@@ -186,15 +185,15 @@
         <li>
           Use the Site in any manner that could interfere with, disrupt,
           negatively affect, redirect or inhibit other users from fully enjoying
-          the Site or the Balancer Protocol, or that could damage, disable,
-          overburden, or impair the functioning of the Site or the Balancer
-          Protocol in any manner;
+          the Site or the Koil Protocol, or that could damage, disable,
+          overburden, or impair the functioning of the Site or the Koil Protocol
+          in any manner;
         </li>
         <li>
           Attempt to circumvent or disable any content filtering techniques or
-          security measures that Balancer Labs employs on the Site, or attempt
-          to access any service or area of the Site that you are not authorized
-          to access;
+          security measures that Koil Finance employs on the Site, or attempt to
+          access any service or area of the Site that you are not authorized to
+          access;
         </li>
         <li>
           Use any robot, spider, crawler, scraper, or other automated means or
@@ -231,22 +230,22 @@
       </h3>
       <ul>
         <li>
-          Losses while digital assets are being supplied to the Balancer
-          Protocol and losses due to the fluctuation of prices of tokens in a
-          trading pair or liquidity pool. Prices of digital currencies, tokens
-          and/or other digital assets fluctuate day by day or even minute by
-          minute. The value of your available balance could surge or drop
-          suddenly. Please note that there is a possibility that the price of
-          tokens could decrease to zero. Prices of tokens are prone to
-          significant fluctuations, for example, due to announced proposed
-          legislative acts, governmental restrictions, news related to cyber
-          crimes or other factors causing potentially excessive market
-          enthusiasm, disproportionate loss in confidence, or manipulation by
-          others in the market.
+          Losses while digital assets are being supplied to the Koil Protocol
+          and losses due to the fluctuation of prices of tokens in a trading
+          pair or liquidity pool. Prices of digital currencies, tokens and/or
+          other digital assets fluctuate day by day or even minute by minute.
+          The value of your available balance could surge or drop suddenly.
+          Please note that there is a possibility that the price of tokens could
+          decrease to zero. Prices of tokens are prone to significant
+          fluctuations, for example, due to announced proposed legislative acts,
+          governmental restrictions, news related to cyber crimes or other
+          factors causing potentially excessive market enthusiasm,
+          disproportionate loss in confidence, or manipulation by others in the
+          market.
         </li>
         <li>
-          Risks associated with accessing the Balancer Protocol through third
-          party web or mobile interfaces. You are responsible for doing your own
+          Risks associated with accessing the Koil Protocol through third party
+          web or mobile interfaces. You are responsible for doing your own
           diligence on those interfaces to understand and accept the risks that
           use entails. You are also responsible for doing your own diligence on
           those interfaces to understand and accept any fees that those
@@ -256,10 +255,10 @@
           Risks associated with any Smart Contracts with which you interact.
         </li>
         <li>
-          Although Balancer Labs does not have access to your assets, you are
+          Although Koil Finance does not have access to your assets, you are
           reminded and acknowledge that at any time, your access to your
           Cryptocurrency Assets through third party wallet services, unrelated
-          to Balancer Labs or the Balancer.Fi website, may be suspended or
+          to Koil Finance or the koil.finance website, may be suspended or
           terminated or there may be a delay in your access or use of your
           Cryptocurrency Assets, which may result in the Cryptocurrency Assets
           diminishing in value or you being unable to complete a Smart Contract.
@@ -323,20 +322,20 @@
           Site, the Application and the Smart Contracts;
         </li>
         <li>
-          that you expressly waive and release Balancer Labs from any and all
+          that you expressly waive and release Koil Finance from any and all
           liability, claims, causes of action, responsibility or damages arising
           from or in any way related to your use of the Site, the Application or
           the Smart Contracts; and
         </li>
         <li>
           upgrades and modifications to the protocol are managed in a
-          community-driven way by holders of the Balancer Protocol governance
-          token. No developer or entity involved in creating the Balancer
-          Protocol will be liable for any claims or damages whatsoever
-          associated with your use, inability to use, or your interaction with
-          other users of, the Balancer Protocol, including any direct, indirect,
-          incidental, special, exemplary, punitive or consequential damages, or
-          loss of profits, cryptocurrencies, tokens, or anything else of value.
+          community-driven way by holders of the Koil Protocol governance token.
+          No developer or entity involved in creating the Koil Protocol will be
+          liable for any claims or damages whatsoever associated with your use,
+          inability to use, or your interaction with other users of, the Koil
+          Protocol, including any direct, indirect, incidental, special,
+          exemplary, punitive or consequential damages, or loss of profits,
+          cryptocurrencies, tokens, or anything else of value.
         </li>
       </ol>
     </div>
@@ -376,12 +375,12 @@
     <div class="subsection">
       <h2>6. Intellectual Property Rights</h2>
       <p>
-        Balancer Labs is the owner of all intellectual property rights in the
+        Koil Finance is the owner of all intellectual property rights in the
         Site and the material published on them. To the extent practical, these
         works are protected by copyright laws and all such rights are reserved.
-        www.Balancer.fi is the uniform resource locator (‘URL’) of Balancer
-        Labs. You will not make use of this URL (or any other URL owned by us)
-        on another website or digital platform without our prior written
+        www.koil.finance is the uniform resource locator (‘URL’) of Koil
+        Finance. You will not make use of this URL (or any other URL owned by
+        us) on another website or digital platform without our prior written
         consent. Any unauthorized use or reproduction may be prosecuted. You
         will retain ownership of all copyright in data you upload or submit by,
         through or to the Site. You grant us a worldwide, royalty-free,
@@ -426,8 +425,8 @@
         even if we have been advised of the possibility of such liability. Some
         jurisdictions do not allow the exclusion of certain warranties or the
         limitation or exclusion of certain liabilities, but your acceptance of
-        these Terms constitutes an agreement to limit the liability of Balancer
-        Labs and our officers, directors, employees, contractors, agents,
+        these Terms constitutes an agreement to limit the liability of Koil
+        Finance and our officers, directors, employees, contractors, agents,
         affiliates, or subsidiaries to the maximum extent possible under any
         applicable laws.
       </p>
@@ -473,7 +472,7 @@
     <div class="subsection">
       <h2>9. Indemnification</h2>
       <p>
-        You agree to indemnify and hold Balancer Labs and our officers,
+        You agree to indemnify and hold Koil Finance and our officers,
         directors, employees, contractors, agents, affiliates, or subsidiaries
         harmless from any claim or demand, including attorneys’ fees and costs,
         made by any third-party due to or arising out of 1) your use of the site
@@ -511,10 +510,10 @@
       </p>
       <p>
         These Terms and the documents referred to in them set out the entire
-        agreement between you and us with respect to your use of the site,
-        Balancer Labs and the services provided via the site and supersede any
-        and all prior or contemporaneous representations, communications or
-        agreements (written or oral) made between you or us.
+        agreement between you and us with respect to your use of the site, Koil
+        Finance and the services provided via the site and supersede any and all
+        prior or contemporaneous representations, communications or agreements
+        (written or oral) made between you or us.
       </p>
       <p>
         Any dispute, controversy, or claim arising out of or in relation to
@@ -526,7 +525,7 @@
         three; the seat of the arbitration shall be determined by the
         arbitrator(s); the arbitral proceedings shall be conducted in English.
         The applicable law shall be Estonian law or another choice of law
-        determined in Balancer Lab’s sole discretion.
+        determined in Koil Finance’s sole discretion.
       </p>
       <p>
         With respect to all persons and entities, regardless of whether they
@@ -537,9 +536,9 @@
         proceeding. This waiver applies to class arbitration, and, unless we
         agree otherwise, the arbitrator may not consolidate more than one
         person’s claims. You agree that, by entering into this agreement, you
-        and Balancer are each waiving the right to a trial by jury or to
-        participate in a class action, collective action, or other
-        representative proceeding of any kind.
+        and Koil are each waiving the right to a trial by jury or to participate
+        in a class action, collective action, or other representative proceeding
+        of any kind.
       </p>
     </div>
     <div class="subsection">
@@ -552,7 +551,7 @@
         opportunity loss (e.g., loss of opportunity to place a payment
         instruction, resulting in loss of profits which could have been
         obtained) due to occurrences such as emergency situations and force
-        majeure events, Balancer Labs is under no obligation to take any
+        majeure events, Koil Finance is under no obligation to take any
         corrective action or measure and shall no under circumstances be liable
         for any lost profits or other trading losses.
       </p>
@@ -560,11 +559,11 @@
     <div>
       <h2>12. Contact Us</h2>
       <p>
-        Balancer Labs is a company incorporated in Estonia. Please contact us if
+        Koil Finance is a company incorporated in Estonia. Please contact us if
         you have any questions about these Terms or other topics, by sending an
         email to
-        <a class="link" href="mailto:termsofuse@balancer.finance"
-          >termsofuse@balancer.finance</a
+        <a class="link" href="mailto:termsofuse@koil.finance"
+          >termsofuse@koil.finance</a
         >.
       </p>
     </div>

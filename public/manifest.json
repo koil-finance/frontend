@@ -1,10 +1,10 @@
 {
-  "short_name": "Balancer",
-  "name": "Balancer",
-  "description": "Swap tokens and manage your assets on Balancer Protocol",
+  "short_name": "Koil",
+  "name": "Koil Finance",
+  "description": "Swap tokens and manage your assets on Koil Protocol",
   "providedBy": {
-    "name": "Balancer Labs",
-    "url": "https://balancer.fi"
+    "name": "Koil Finance",
+    "url": "https://koil.finance"
   },
   "icons": [
     {

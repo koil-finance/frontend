@@ -438,11 +438,11 @@ export default defineComponent({
       };
       const prefix = prefixMap[chainId] || '';
       if (props.sorReturn.isV1swap && chainId === 122) {
-        return `https://pools.balancer.exchange/#/pool/${id}`;
+        return `https://pools.koil.finance/#/pool/${id}`;
       } else {
         return props.sorReturn.isV1swap
-          ? `https://${prefix}pools.balancer.exchange/#/pool/${id}`
-          : `https://${prefix}balancer.fi/#/pool/${id}`;
+          ? `https://${prefix}pools.koil.finance/#/pool/${id}`
+          : `https://${prefix}koil.finance/#/pool/${id}`;
       }
     }
 

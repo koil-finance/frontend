@@ -92,7 +92,7 @@ export default defineComponent({
     }
 
     function appUrl(network: Network): string {
-      return `https://${network.subdomain}.balancer.fi`;
+      return `https://${network.subdomain}.koil.finance`;
     }
 
     function isActive(network: Network): boolean {
