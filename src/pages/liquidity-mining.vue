@@ -29,14 +29,14 @@
             activities that help the network grow. Liquidity Mining aligns
             incentives between a protocol and its community by distributing
             voting power to the people who help create a more liquid market.<br /><br />The
-            Balancer Protocol, via the community Ballers, has allocated BAL
+            Koil Protocol, via the community Koilers, has allocated KOIL tokens
             tokens to go to Liquidity Providers in certain eligible pools (as
             listed in the tables above). Tokens are distributed proportional to
             the amount of liquidity each address contributed, relative to the
-            total liquidity in eligible Balancer pools. BAL tokens give voting
+            total liquidity in eligible Koil pools. KOIL tokens give voting
             rights in community governance. In addition, other protocols may
-            further incentivize liquidity by also distributing tokens to
-            Balancer Liquidity Providers in certain pools.
+            further incentivize liquidity by also distributing tokens to Koil
+            Liquidity Providers in certain pools.
           </p>
           <div class="mt-6">
             <h5>Liquidity mining details</h5>
@@ -49,8 +49,8 @@
                 Liquidity mining weeks start and end at 00:00 UTC on Mondays.
               </li>
               <li class="mt-2">
-                BAL allocations and pool eligibility are determined weekly by
-                the community ‘Ballers’.
+                KOIL allocations and pool eligibility are determined weekly by
+                the community ‘Koilers’.
               </li>
             </ul>
           </div>
@@ -174,7 +174,7 @@ export default defineComponent({
 
     const description = computed(() => {
       if (networkConfig.chainId === Network.FUSE) {
-        return `BAL distributions on Fuse can be claimed weekly by tapping the
+        return `KOIL distributions on Fuse can be claimed weekly by tapping the
         liquidity mining claim tool in the header.`;
       }
       return '';
