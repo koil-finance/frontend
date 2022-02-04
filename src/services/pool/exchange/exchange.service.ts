@@ -1,10 +1,7 @@
 import { Ref } from 'vue';
 import { TransactionResponse } from '@ethersproject/abstract-provider';
 import { callStatic, sendTransaction } from '@/lib/utils/balancer/web3';
-import {
-  Vault__factory,
-  BalancerHelpers__factory
-} from '@balancer-labs/typechain';
+import { Vault__factory, KoilHelpers__factory } from '@koil-finance/typechain';
 import JoinParams from './serializers/JoinParams';
 import ExitParams from './serializers/ExitParams';
 import { FullPool } from '@/services/balancer/subgraph/types';
@@ -42,7 +39,7 @@ export default class ExchangeService {
     return await callStatic(
       provider,
       this.helpersAddress,
-      BalancerHelpers__factory.abi,
+      KoilHelpers__factory.abi,
       'queryJoin',
       txParams
     );
@@ -94,7 +91,7 @@ export default class ExchangeService {
     return await callStatic(
       provider,
       this.helpersAddress,
-      BalancerHelpers__factory.abi,
+      KoilHelpers__factory.abi,
       'queryExit',
       txParams
     );

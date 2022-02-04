@@ -677,7 +677,8 @@
     "week": "Week",
     "weekAbbrev": "w",
     "weight": "Weight",
-    "weightedPool": "Weighted pool",
+    "weightedPool": "Weighted Pool",
+    "metaStablePool": "Meta Stable Pool",
     "whichPools": "Which liquidity pools should be used when you make a trade.",
     "withdraw": {
         "label": "Withdraw",

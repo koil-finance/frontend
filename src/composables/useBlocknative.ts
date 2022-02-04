@@ -5,7 +5,7 @@ import { bnSdkSymbol } from '@/plugins/blocknative';
 import { Network } from '@koil-finance/sdk';
 import useWeb3 from '@/services/web3/useWeb3';
 
-const SUPPORTED_NETWORKS = [Network.FUSE];
+const SUPPORTED_NETWORKS: Network[] = [];
 
 export default function useBlocknative() {
   const { appNetworkConfig } = useWeb3();
