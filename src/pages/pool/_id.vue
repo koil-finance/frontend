@@ -313,13 +313,15 @@ export default defineComponent({
     });
 
     const hasCustomToken = computed(() => {
-      const knownTokens = Object.keys(balancerTokenListTokens.value);
+      const knownTokens = Object.keys(
+        balancerTokenListTokens.value
+      ).map(token => token.toLowerCase());
       return (
         !!pool.value &&
         !isLiquidityBootstrappingPool.value &&
         !isStablePhantomPool.value &&
         pool.value.tokenAddresses.some(
-          address => !knownTokens.includes(address)
+          address => !knownTokens.includes(address.toLowerCase())
         )
       );
     });

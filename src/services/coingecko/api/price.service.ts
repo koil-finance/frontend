@@ -132,13 +132,29 @@ export class PriceService {
     const requests: Promise<HistoricalPriceResponse>[] = [];
 
     addresses.forEach(address => {
-      const endpoint = `/coins/${
-        this.platformId
-      }/contract/${address.toLowerCase()}/market_chart/range?vs_currency=${
-        this.fiatParam
-      }&from=${start}&to=${end}`;
+      const getMarketHistorical = (): Promise<HistoricalPriceResponse> => {
+        return this.client
+          .get<HistoricalPriceResponse>(
+            `/coins/${
+              this.platformId
+            }/contract/${address.toLowerCase()}/market_chart/range?vs_currency=${
+              this.fiatParam
+            }&from=${start}&to=${end}`
+          )
+          .catch(error => {
+            if (error.response && error.response.status === 404) {
+              return {
+                market_caps: [],
+                prices: [],
+                total_volumes: []
+              };
+            }
+
+            throw error;
+          });
+      };
       const request = retryPromiseWithDelay(
-        this.client.get<HistoricalPriceResponse>(endpoint),
+        getMarketHistorical(),
         3, // retryCount
         2000 // delayTime
       );
