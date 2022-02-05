@@ -61,7 +61,10 @@ async function getPairPriceData(
     aggregateBy
   );
 
-  if (!Object.keys(inputAssetData).length || !Object.keys(outputAssetData).length) {
+  if (
+    !Object.keys(inputAssetData).length ||
+    !Object.keys(outputAssetData).length
+  ) {
     throw Error('Input or output asset data is missing');
   }
 

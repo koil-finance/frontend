@@ -27,10 +27,7 @@
           :class="{ 'text-white': !darkMode, 'text-gray-800': darkMode }"
         />
         <div class="flex justify-center mt-4">
-          <BalBtn
-            :color="darkMode ? 'gray' : 'white'"
-            @click="onClickConnect"
-          >
+          <BalBtn :color="darkMode ? 'gray' : 'white'" @click="onClickConnect">
             {{ $t('connectWallet') }}
           </BalBtn>
         </div>
