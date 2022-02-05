@@ -17,12 +17,6 @@
         @amountChange="handleAmountChange"
         class="mb-4"
       />
-      <GasReimbursement
-        class="mb-5"
-        :address-in="tokenInAddress"
-        :address-out="tokenOutAddress"
-        :sorReturn="sorReturn"
-      />
       <BalAlert
         v-if="error"
         class="mb-4"
@@ -103,7 +97,6 @@ import TradeRoute from '@/components/cards/TradeCard/TradeRoute.vue';
 import TradeSettingsPopover, {
   TradeSettingsContext
 } from '@/components/popovers/TradeSettingsPopover.vue';
-import GasReimbursement from './GasReimbursement.vue';
 import { useI18n } from 'vue-i18n';
 import useWeb3 from '@/services/web3/useWeb3';
 import useBreakpoints from '@/composables/useBreakpoints';
@@ -120,8 +113,7 @@ export default defineComponent({
     TradePair,
     TradePreviewModal,
     TradeRoute,
-    TradeSettingsPopover,
-    GasReimbursement
+    TradeSettingsPopover
   },
 
   setup() {
