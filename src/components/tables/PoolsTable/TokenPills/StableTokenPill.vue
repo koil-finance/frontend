@@ -61,7 +61,7 @@ withDefaults(defineProps<Props>(), {
 }
 
 .pill-selected::before {
-  @apply bg-blue-600 dark:bg-blue-600;
+  @apply bg-red-600 dark:bg-red-600;
 }
 
 .pill-selected .pill-text {

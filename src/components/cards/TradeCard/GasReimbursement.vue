@@ -182,7 +182,7 @@ export default defineComponent({
 
 <style scoped>
 .message {
-  @apply bg-gradient-to-tr from-blue-50 to-pink-50;
+  @apply bg-gradient-to-tr from-red-50 to-pink-50;
   border-radius: 10px;
 }
 

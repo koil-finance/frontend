@@ -92,7 +92,7 @@ function tokenFor(option: string): TokenInfo {
         v-if="!fixed"
         name="chevron-down"
         size="sm"
-        class="text-blue-500 group-hover:text-pink-500 ml-2"
+        class="text-red-500 group-hover:text-pink-500 ml-2"
       />
     </div>
     <BalDropdown
@@ -121,7 +121,7 @@ function tokenFor(option: string): TokenInfo {
           <BalIcon
             name="chevron-down"
             size="sm"
-            class="text-blue-500 group-hover:text-pink-500 ml-2"
+            class="text-red-500 group-hover:text-pink-500 ml-2"
           />
         </div>
       </template>
@@ -139,7 +139,7 @@ function tokenFor(option: string): TokenInfo {
           <BalIcon
             v-if="optionToken.address === modelValue"
             name="check"
-            class="text-blue-500 ml-4"
+            class="text-red-500 ml-4"
           />
         </div>
       </template>
@@ -179,7 +179,7 @@ function tokenFor(option: string): TokenInfo {
 }
 
 .unselected {
-  @apply bg-blue-500 text-white;
+  @apply bg-red-500 text-white;
 }
 
 .selected {

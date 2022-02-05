@@ -61,6 +61,10 @@ async function getPairPriceData(
     aggregateBy
   );
 
+  if (!Object.keys(inputAssetData).length || !Object.keys(outputAssetData).length) {
+    throw Error('Input or output asset data is missing');
+  }
+
   const calculatedPricing = mapValues(inputAssetData, (value, timestamp) => {
     if (!outputAssetData[timestamp]) return null;
     return (1 / value[0]) * outputAssetData[timestamp][0];
@@ -234,6 +238,7 @@ const chartGrid = computed(() => {
       growContent
       noPad
       :noBorder="upToLargeBreakpoint || isModal"
+      :cardContainerStyles="{ marginTop: 'auto', marginBottom: 'auto' }"
       v-else
     >
       <div class="relative h-full bg-transparent p-4">

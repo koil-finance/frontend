@@ -119,8 +119,8 @@ export default defineComponent({
         return `bg-gradient-to-tr from-${fromColor}-50 to-${toColor}-50`;
       }
       return `
-        bg-gradient-to-tr from-${fromColor}-500 to-${toColor}-500
-        hover:from-${fromColor}-600 hover:to-${toColor}-600
+        bg-gradient-to-tr from-${fromColor}-600 to-${toColor}-600
+        hover:from-${fromColor}-700 hover:to-${toColor}-700
       `;
     });
 
@@ -146,8 +146,8 @@ export default defineComponent({
         }
 
         return `
-          bg-${props.color}-500 hover:bg-${props.color}-600
-          dark:bg-${props.color}-dark-500 dark:hover:bg-${props.color}-dark-600
+          bg-${props.color}-600 hover:bg-${props.color}-700
+          dark:bg-${props.color}-dark-600 dark:hover:bg-${props.color}-dark-700
         `;
       }
     });

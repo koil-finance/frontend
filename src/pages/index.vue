@@ -4,7 +4,7 @@
       <div class="px-4 lg:px-0">
         <BalStack horizontal justify="between" align="center">
           <h3>{{ $t('myInvestments') }}</h3>
-          <BalBtn @click="navigateToCreatePool" color="blue" size="sm">{{
+          <BalBtn @click="navigateToCreatePool" color="red" size="sm">{{
             $t('createAPool.title')
           }}</BalBtn>
         </BalStack>
@@ -34,7 +34,7 @@
         />
         <BalBtn
           @click="navigateToCreatePool"
-          color="blue"
+          color="red"
           size="sm"
           :class="{ 'mt-4': upToMediumBreakpoint }"
           :block="upToMediumBreakpoint"

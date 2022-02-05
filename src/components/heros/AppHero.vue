@@ -4,14 +4,14 @@
       <template v-if="isWalletReady">
         <h1
           v-text="$t('myInvestments')"
-          class="text-base font-medium text-white opacity-90 font-body mb-2"
+          class="text-base font-medium opacity-90 font-body mb-2 text-red-900"
         />
         <BalLoadingBlock
           v-if="isLoadingUserPools"
           class="h-10 w-40 mx-auto"
           white
         />
-        <span v-else class="text-3xl font-bold text-white">
+        <span v-else class="text-3xl font-bold text-red-900">
           {{
             fNum2(totalInvestedAmount || '', {
               style: 'currency',
@@ -23,27 +23,15 @@
       <template v-else>
         <h1
           v-text="$t('ammPlatform')"
-          class="text-white text-center text-4xl md:text-5xl pb-2"
+          class="text-center text-4xl md:text-5xl pb-2"
+          :class="{ 'text-white': !darkMode, 'text-gray-800': darkMode }"
         />
         <div class="flex justify-center mt-4">
           <BalBtn
             :color="darkMode ? 'gray' : 'white'"
-            class="mr-3"
             @click="onClickConnect"
           >
             {{ $t('connectWallet') }}
-          </BalBtn>
-          <BalBtn
-            tag="a"
-            :href="EXTERNAL_LINKS.Balancer.Home"
-            target="_blank"
-            rel="noreferrer"
-            color="white"
-            outline
-            @click="trackGoal(Goals.ClickHeroLearnMore)"
-          >
-            {{ $t('learnMore') }}
-            <BalIcon name="arrow-up-right" size="sm" class="ml-1" />
           </BalBtn>
         </div>
       </template>

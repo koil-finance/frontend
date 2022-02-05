@@ -1,6 +1,6 @@
 <template>
   <div :class="['bal-card', cardClasses]">
-    <div :class="['card-container', { 'overflow-y-scroll': overflowYScroll }]">
+    <div :class="['card-container', { 'overflow-y-scroll': overflowYScroll }]" :style="cardContainerStyles">
       <div v-if="imgSrc" class="feature" :style="featureStyles" />
       <div v-if="!!title || $slots.header" :class="['header', headerClasses]">
         <component :is="titleTag" v-if="!!title" v-text="title" />
@@ -47,7 +47,8 @@ export default defineComponent({
       validator: (val: string): boolean => {
         return ['', 'none', 'sm', 'md', 'lg', 'xl'].includes(val);
       }
-    }
+    },
+    cardContainerStyles: { type: Object, default: () => ({}) }
   },
 
   setup(props) {

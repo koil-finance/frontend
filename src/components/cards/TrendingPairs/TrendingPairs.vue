@@ -80,7 +80,7 @@ const setTradePair = (pair: TrendingPair[]) => {
       </div>
       <div class="px-1 lg:p-3 flex flex-wrap">
         <button
-          class="py-1 px-2 bg-transparent hover:bg-blue-500 hover:text-white text-sm rounded-lg lg:shadow my-2 mr-2 font-medium lg:font-normal"
+          class="py-1 px-2 bg-transparent hover:bg-red-500 hover:text-white text-sm rounded-lg lg:shadow my-2 mr-2 font-medium lg:font-normal"
           v-for="(pair, i) in trendingPairs"
           :key="`trendingPair-${i}`"
           @click="setTradePair(pair)"
