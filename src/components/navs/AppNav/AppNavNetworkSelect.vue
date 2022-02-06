@@ -72,7 +72,7 @@ export default defineComponent({
       {
         id: 'fuse',
         name: 'Fuse',
-        subdomain: 'app',
+        subdomain: '',
         key: '122'
       }
     ];
@@ -92,7 +92,9 @@ export default defineComponent({
     }
 
     function appUrl(network: Network): string {
-      return `https://${network.subdomain}.koil.finance`;
+      return `https://${
+        network.subdomain ? `${network.subdomain}.` : ''
+      }koil.finance`;
     }
 
     function isActive(network: Network): boolean {

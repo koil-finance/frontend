@@ -433,14 +433,14 @@ export default defineComponent({
     function getPoolLink(id: string): string {
       const chainId = appNetworkConfig.chainId;
       const prefixMap = {
-        [Network.FUSE]: 'app.'
+        [Network.FUSE]: ''
       };
       const prefix = prefixMap[chainId] || '';
       if (props.sorReturn.isV1swap && chainId === 122) {
-        return `https://pools.koil.finance/#/pool/${id}`;
+        return `https://koil.finance/#/pool/${id}`;
       } else {
         return props.sorReturn.isV1swap
-          ? `https://${prefix}pools.koil.finance/#/pool/${id}`
+          ? `https://${prefix}koil.finance/#/pool/${id}`
           : `https://${prefix}koil.finance/#/pool/${id}`;
       }
     }
