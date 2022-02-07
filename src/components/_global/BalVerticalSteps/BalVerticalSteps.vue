@@ -44,7 +44,7 @@ const stepCircleClasses = computed(() => {
     return getActiveClassName(step.state, [
       [
         StepState.Active,
-        'border-2 border-none bg-gradient-from-l bg-gradient-to-r from-red-600 to-red-50 text-white active'
+        'border-2 border-none bg-gradient-from-l bg-gradient-to-r from-red-800 to-red-500 text-white active'
       ],
       [
         StepState.Todo,

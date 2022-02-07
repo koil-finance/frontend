@@ -17,9 +17,9 @@ export const TOKEN_LIST_MAP: TokenListMapByNetwork = {
   '122': {
     Balancer: {
       Default:
-        'https://storageapi.fleek.co/a667fff6-ded3-4ead-a644-e3562bed0a86-bucket/fuse.vetted.tokenlist.json',
+        'https://raw.githubusercontent.com/koil-finance/frontend/master/public/json/fuse.vetted.tokenlist.json',
       Vetted:
-        'https://storageapi.fleek.co/a667fff6-ded3-4ead-a644-e3562bed0a86-bucket/fuse.vetted.tokenlist.json'
+        'https://raw.githubusercontent.com/koil-finance/frontend/master/public/json/fuse.vetted.tokenlist.json'
     },
     External: []
   }
