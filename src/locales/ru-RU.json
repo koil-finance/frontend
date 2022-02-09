@@ -373,8 +373,8 @@
        "actionLabel":"Принимать"
     },
     "profit":"Выгода (1{0})",
-    "proportionalSuggestion":"Пропорциональное предложение",
-    "proportionalWithdrawal":"Пропорциональный отказ",
+    "proportionalSuggestion":"Сделать пропорциональным",
+    "proportionalWithdrawal":"Сделать пропорциональным",
     "protocolFees":"Плата за протокол",
     "rank":"Pанг (1{0})",
     "receipt":"Квитанция",

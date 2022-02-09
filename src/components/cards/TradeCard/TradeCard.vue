@@ -194,7 +194,6 @@ export default defineComponent({
       sorReturn,
       latestTxHash,
       pools,
-      fetchPools,
       poolsLoading
     } = useSor({
       exactIn,
@@ -284,7 +283,6 @@ export default defineComponent({
 
     watch(latestTxHash, () => {
       // Refresh SOR pools
-      fetchPools();
       txHash.value = latestTxHash.value;
       tradeSuccess.value = true;
       modalTradePreviewIsOpen.value = false;
