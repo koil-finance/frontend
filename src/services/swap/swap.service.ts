@@ -99,7 +99,9 @@ export default class SwapService {
         return vaultService.swap(
           single,
           funds,
-          tokenOut.amount.toString(),
+          single.kind === SwapKind.GivenIn
+            ? tokenOut.amount.toString()
+            : tokenIn.amount.toString(),
           overrides
         );
       }

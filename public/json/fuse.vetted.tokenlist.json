@@ -159,7 +159,8 @@
       "chainId": 122,
       "name": "FSB",
       "symbol": "FSB",
-      "decimals": "9"
+      "decimals": "9",
+      "logoURI": "https://storage.googleapis.com/production-bluehost-v1-0-3/123/1130123/Dd7F6h31/f0c71dc09c5145ba9113699388911c3b"
     },
     {
       "address": "0xE1C110E1B1b4A1deD0cAf3E42BfBdbB7b5d7cE1C",
@@ -167,6 +168,14 @@
       "name": "ELK",
       "symbol": "ELK",
       "decimals": "18"
+    },
+    {
+      "address": "0xFe4D5E383BEaA6D2357Ce7BA9883019B760Ad134",
+      "chainId": 122,
+      "name": "TigerGod",
+      "symbol": "tGod",
+      "decimals": "18",
+      "logoURI": "https://storage.googleapis.com/production-bluehost-v1-0-3/123/1130123/Dd7F6h31/16753794b0d64305a36c7fb1501bfae7"
     }
   ]
 }
