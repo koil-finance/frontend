@@ -14,7 +14,7 @@
   "explorerName": "Fuse Explorer",
   "poolsUrlV1": "",
   "poolsUrlV2": "",
-  "subgraph": "https://api.thegraph.com/subgraphs/name/koil-finance/koil-finance",
+  "subgraph": "https://api.thegraph.com/subgraphs/name/koil-finance/koil-protocol",
   "subgraphs": {
     "aave": ""
   },
@@ -31,18 +31,18 @@
   "addresses": {
     "exchangeProxy": "",
     "merkleRedeem": "",
-    "merkleOrchard": "0xE8DAEA960b658554145FfD7Ce8888052C680522D",
+    "merkleOrchard": "0xAbd3161Abf88Ea60C63B8a874C1ff41D35528D82",
     "multicall": "0x133D83f1B2D7830816C80F907bbEf923CBc361Bc",
     "authorizer": "0x590F2926bb51834946F0272cC059d6984f81e4E5",
-    "vault": "0x48F76d2Be0f335b2be88589A1889d5198E6B3551",
-    "weightedPoolFactory": "0x13A1d2A9F729cDc485050c53b79689eE9131D898",
-    "stablePoolFactory": "0xb0Bf8981B8f814cFBA6507c84c8Daa7487aE3c9A",
+    "vault": "0xc18974764F7Fd055E680656Cb44CB50b2c4DDb2E",
+    "weightedPoolFactory": "0x85C256263d69597B4CDeE6Adf67538704B317EAc",
+    "stablePoolFactory": "0x9f05D6efD8Cd4b10425E78B9bEda7543f1534BD5",
     "weth": "0x0BE9e53fd7EDaC9F859882AfdDa116645287C629",
     "stETH": "",
     "wstETH": "",
     "lidoRelayer": "",
-    "balancerHelpers": "0xEA6721381e75bB1c7B890EaCDAD8C14a9909C6f8",
-    "batchRelayer": "0xC668Dc58EB978b5fa9B4Ca415c58CDFc497d210E"
+    "balancerHelpers": "0xfcf8be0ddDC66bcD68F74A083F85944Bdb2044a3",
+    "batchRelayer": "0x7E2c98Ee5bcebE5cB3908b50A8aD1DB7d1eFEC99"
   },
   "strategies": {
     "0": {

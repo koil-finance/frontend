@@ -20,9 +20,9 @@ export const POOLS = {
     AllowList: ['0x0000000000000000000000000000000000000000']
   },
   Factories: {
-    '0x13a1d2a9f729cdc485050c53b79689ee9131d898': 'weightedPool',
-    '0xb0bf8981b8f814cfba6507c84c8daa7487ae3c9a': 'stablePool',
-    '0x949beae5ca469f7f5b9289fdd4f3df3d22286068': 'metaStablePool',
-    '0x3609b8cb9e8ccc8fea2492dac82802337b6bc38f': 'weightedPool'
+    '0x85c256263d69597b4cdee6adf67538704b317eac': 'weightedPool',
+    '0x9f05d6efd8cd4b10425e78b9beda7543f1534bd5': 'stablePool',
+    '0xbfd0aba0d24732abca13a3087cbc7b65a92140a6': 'metaStablePool',
+    '0xc618c2b1e4b357bd39b432d861e3744868f16ad1': 'weightedPool'
   }
 };

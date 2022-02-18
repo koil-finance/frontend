@@ -119,7 +119,7 @@
   },
   "dependencies": {
     "@balancer-labs/typechain": "^1.0.0",
-    "@koil-finance/sdk": "^1.0.1",
+    "@koil-finance/sdk": "^1.0.3",
     "@koil-finance/sor": "^1.0.0"
   }
 }
