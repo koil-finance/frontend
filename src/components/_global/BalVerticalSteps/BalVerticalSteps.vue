@@ -30,10 +30,10 @@ const visibleSteps = computed(() => {
 const stepTextClasses = computed(() => {
   return visibleSteps.value.map(step => {
     return getActiveClassName(step.state, [
-      [StepState.Active, 'text-red-400 font-semibold hover:text-red-800'],
+      [StepState.Active, 'text-red-400 font-semibold text-ac503f'],
       [StepState.Todo, 'text-gray-400 font-normal'],
       [StepState.Success, 'text-green-500 font-semibold'],
-      [StepState.Warning, 'text-red-500 font-semibold'],
+      [StepState.Warning, 'text-red-500 font-semibold text-ac503f'],
       [StepState.Completed, 'text-gray-700 font-medium']
     ]);
   });
@@ -42,10 +42,7 @@ const stepTextClasses = computed(() => {
 const stepCircleClasses = computed(() => {
   return visibleSteps.value.map(step => {
     return getActiveClassName(step.state, [
-      [
-        StepState.Active,
-        'border-2 border-none bg-gradient-from-l bg-gradient-to-r from-red-800 to-red-500 text-white active'
-      ],
+      [StepState.Active, 'border-2 border-none bg-ac503f text-white active'],
       [
         StepState.Todo,
         'border-2 border-gray-300 dark:border-gray-600 text-gray-500'
@@ -54,7 +51,7 @@ const stepCircleClasses = computed(() => {
         StepState.Success,
         'border-2 border-none bg-gradient-to-tr from-green-500 to-green-200 text-white'
       ],
-      [StepState.Warning, 'border-2 border-none bg-red-500 text-white active'],
+      [StepState.Warning, 'border-2 border-none text-white active bg-ac503f'],
       [StepState.Completed, 'border-2 border-gray-600 font-medium']
     ]);
   });
@@ -125,5 +122,12 @@ function handleNavigate(state: StepState, stepIndex: number) {
 .circle-line.active::after {
   bottom: -1rem;
   height: 1rem;
+}
+
+.bg-ac503f {
+  background: #ac503f;
+}
+.text-ac503f {
+  color: #ac503f;
 }
 </style>

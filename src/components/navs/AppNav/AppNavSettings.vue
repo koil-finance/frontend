@@ -1,10 +1,14 @@
 <template>
-  <div>
-    <div class="p-4 border-b dark:border-gray-900">
+  <div style="background: #fef7e5;">
+    <div class="p-4 border-b" style="border-color: #d8ceb5;">
       <div class="flex justify-between items-center mb-4">
         <h5 v-text="$t('account')" class="leading-none" />
         <div v-if="!hideDisconnect">
-          <BalBtn outline color="gray" size="xs" @click="disconnectWallet">
+          <BalBtn
+            class="disconnect-wallet-button"
+            size="xs"
+            @click="disconnectWallet"
+          >
             Disconnect
           </BalBtn>
         </div>
@@ -22,17 +26,17 @@
           </div>
           <div class="ml-2">
             <div class="address flex items-baseline">
-              <div v-text="_shorten(account)" />
+              <div class="text-black" v-text="_shorten(account)" />
               <div class="ml-3 flex">
                 <BalTooltip width="auto">
                   <template v-slot:activator>
                     <BalBtn
+                      fiat
                       circle
-                      color="gray"
+                      noPadding
+                      style="background: transparent; color: black; box-shadow: none;"
                       size="xs"
-                      flat
                       @click="copyAddress"
-                      class="mr-2"
                     >
                       <BalIcon v-if="copiedAddress" name="check" size="xs" />
                       <BalIcon v-else name="clipboard" size="xs" />
@@ -44,9 +48,10 @@
                   />
                 </BalTooltip>
                 <BalBtn
-                  circle
                   flat
-                  color="gray"
+                  circle
+                  noPadding
+                  style="background: transparent;"
                   size="xs"
                   tag="a"
                   :href="explorer.addressLink(account)"
@@ -160,7 +165,8 @@
       <div class="flex mt-1"></div>
     </div>
     <div
-      class="network p-4 mt-4 text-sm border-t dark:border-gray-900 rounded-b-xl"
+      class="network p-4 mt-4 text-sm border-t rounded-b-xl"
+      style="border-color: #d8ceb5;"
     >
       <div v-text="$t('network')" />
       <div class="flex items-baseline">
@@ -333,5 +339,12 @@ export default defineComponent({
 
 .slippage-input.active {
   @apply text-red-500 border-red-500;
+}
+
+.disconnect-wallet-button {
+  background: black;
+  color: white;
+  border: 1px solid #dedde1;
+  border-radius: 4px;
 }
 </style>

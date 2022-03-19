@@ -14,14 +14,7 @@
     >
       <template v-slot:iconColumnHeader>
         <div class="flex items-center">
-          <img
-            v-if="darkMode"
-            :src="require('@/assets/images/icons/tokens_white.svg')"
-          />
-          <img
-            v-else
-            :src="require('@/assets/images/icons/tokens_black.svg')"
-          />
+          <img :src="require('@/assets/images/icons/tokens_black.svg')" />
         </div>
       </template>
       <template
@@ -135,7 +128,6 @@ import { useI18n } from 'vue-i18n';
 import useTokens from '@/composables/useTokens';
 import useNumbers from '@/composables/useNumbers';
 import { last, sum } from 'lodash';
-import useDarkMode from '@/composables/useDarkMode';
 import { isStableLike, isStablePhantom } from '@/composables/usePool';
 import { startOfWeek, subWeeks, format, addDays } from 'date-fns';
 
@@ -169,7 +161,6 @@ export default defineComponent({
     const { weeks, poolMetadata } = toRefs(props);
     const { tokens, priceFor } = useTokens();
     const { fNum2 } = useNumbers();
-    const { darkMode } = useDarkMode();
 
     const data = computed(() => {
       if (!poolMetadata.value) return [];
@@ -267,7 +258,6 @@ export default defineComponent({
       data,
       tokens,
       priceFor,
-      darkMode,
       latestWeek,
       getWeekStart
     };

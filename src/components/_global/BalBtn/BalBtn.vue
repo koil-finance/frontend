@@ -66,20 +66,23 @@ export default defineComponent({
     rounded: { type: Boolean, default: false },
     loading: { type: Boolean, default: false },
     loadingLabel: { type: String, default: 'loading...' },
-    disabled: { type: Boolean, default: false }
+    disabled: { type: Boolean, default: false },
+    noPadding: { type: Boolean, default: false }
   },
 
   setup(props) {
     const sizeClasses = computed(() => {
       switch (props.size) {
         case 'xs':
-          return 'px-2 h-6 text-xs';
+          return props.noPadding ? 'h-6 text-xs' : 'px-2 h-6 text-xs';
         case 'sm':
-          return 'px-3 h-9 text-base';
+          return props.noPadding ? 'h-9 text-base' : 'px-3 h-9 text-base';
         case 'lg':
-          return 'px-5 h-18 text-lg md:text-2xl';
+          return props.noPadding
+            ? 'h-18 text-lg md:text-2xl'
+            : 'px-5 h-18 text-lg md:text-2xl';
         default:
-          return 'px-4 h-12 text-base';
+          return props.noPadding ? 'h-12 text-base' : 'px-4 h-12 text-base';
       }
     });
 
@@ -221,7 +224,6 @@ export default defineComponent({
 <style scoped>
 .bal-btn {
   @apply overflow-hidden tracking-tight;
-  font-variation-settings: 'wght' 500;
   transition: all 0.2s ease;
   text-decoration: none !important;
   line-height: 0;

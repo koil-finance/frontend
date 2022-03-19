@@ -1,37 +1,31 @@
 <template>
-  <div :class="['app-hero', classes]">
-    <div class="w-full max-w-2xl mx-auto">
-      <template v-if="isWalletReady">
-        <h1
-          v-text="$t('myInvestments')"
-          class="text-base font-medium opacity-90 font-body mb-2 text-red-900"
-        />
-        <BalLoadingBlock
-          v-if="isLoadingUserPools"
-          class="h-10 w-40 mx-auto"
-          white
-        />
-        <span v-else class="text-3xl font-bold text-red-900">
-          {{
-            fNum2(totalInvestedAmount || '', {
-              style: 'currency',
-              fixedFormat: true
-            })
-          }}
-        </span>
-      </template>
-      <template v-else>
-        <h1
-          v-text="$t('ammPlatform')"
-          class="text-center text-4xl md:text-5xl pb-2"
-          :class="{ 'text-white': !darkMode, 'text-gray-800': darkMode }"
-        />
-        <div class="flex justify-center mt-4">
-          <BalBtn :color="darkMode ? 'gray' : 'white'" @click="onClickConnect">
-            {{ $t('connectWallet') }}
-          </BalBtn>
-        </div>
-      </template>
+  <div :class="['app-hero', 'h-56']">
+    <div class="lg:container lg:mx-auto pt-10 md:pt-12">
+      <!--      <template v-if="isWalletReady">-->
+      <!--        <h1-->
+      <!--          v-text="$t('myInvestments')"-->
+      <!--          class="text-base font-medium opacity-90 font-body mb-2 text-red-900"-->
+      <!--        />-->
+      <!--        <BalLoadingBlock-->
+      <!--          v-if="isLoadingUserPools"-->
+      <!--          class="h-10 w-40 mx-auto"-->
+      <!--          white-->
+      <!--        />-->
+      <!--        <span v-else class="text-3xl font-bold text-red-900">-->
+      <!--          {{-->
+      <!--            fNum2(totalInvestedAmount || '', {-->
+      <!--              style: 'currency',-->
+      <!--              fixedFormat: true-->
+      <!--            })-->
+      <!--          }}-->
+      <!--        </span>-->
+      <!--      </template>-->
+      <!--      <template>-->
+      <h1 class="text-4xl md:text-5xl pb-2 text-black">
+        {{ $t('unlockThePowerOfFuse') }}<br />
+        {{ $t('through') }} <b>{{ $t('koil') }}</b>
+      </h1>
+      <!--      </template>-->
     </div>
   </div>
 </template>
@@ -45,7 +39,6 @@ import usePools from '@/composables/pools/usePools';
 import { EXTERNAL_LINKS } from '@/constants/links';
 import useFathom from '@/composables/useFathom';
 import useWeb3 from '@/services/web3/useWeb3';
-import useDarkMode from '@/composables/useDarkMode';
 
 export default defineComponent({
   name: 'AppHero',
@@ -56,12 +49,6 @@ export default defineComponent({
     const { isWalletReady, toggleWalletSelectModal } = useWeb3();
     const { trackGoal, Goals } = useFathom();
     const { totalInvestedAmount, isLoadingUserPools } = usePools();
-    const { darkMode } = useDarkMode();
-
-    const classes = computed(() => ({
-      ['h-72']: !isWalletReady.value,
-      ['h-40']: isWalletReady.value
-    }));
 
     function onClickConnect() {
       toggleWalletSelectModal(true);
@@ -76,8 +63,6 @@ export default defineComponent({
 
       // computed
       isWalletReady,
-      classes,
-      darkMode,
 
       // methods
       toggleWalletSelectModal,
@@ -93,8 +78,12 @@ export default defineComponent({
 
 <style>
 .app-hero {
-  @apply bg-cover bg-center flex items-center justify-center text-center px-4;
+  @apply bg-cover bg-center flex items-center justify-center px-4;
   transition: all 0.3s ease-in-out;
-  background-image: url('/images/backgrounds/bg-header.svg');
+}
+.app-hero h1 {
+  @apply text-black;
+  font-family: 'DM Sans Medium', monospace;
+  font-weight: 500;
 }
 </style>

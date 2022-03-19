@@ -7,11 +7,10 @@
     </div>
     <BalBtn
       v-else
-      color="white"
-      :size="upToLargeBreakpoint ? 'md' : 'sm'"
+      color="red"
+      class="connect-wallet-btn"
       @click="toggleWalletSelectModal"
     >
-      <WalletIcon class="mr-2" />
       <span class="hidden lg:inline-block" v-text="$t('connectWallet')" />
       <span class="lg:hidden" v-text="$t('connect')" />
     </BalBtn>
@@ -73,3 +72,10 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+.connect-wallet-btn {
+  @apply h-11;
+  border-radius: 10px;
+}
+</style>

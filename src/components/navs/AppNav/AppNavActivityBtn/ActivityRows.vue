@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div v-for="transaction in transactions" :key="transaction.id" class="mb-3">
+    <div
+      v-for="(transaction, i) in transactions"
+      :key="transaction.id"
+      :class="{ 'mb-3': i !== transactions.length - 1 }"
+    >
       <div class="row">
         <BalLink
           :href="getExplorerLink(transaction.id, transaction.type)"
@@ -22,7 +26,7 @@
               "
               name="arrow-up-right"
               size="sm"
-              class="ml-1 text-gray-400 dark:text-gray-600 group-hover:text-pink-500 transition-colors"
+              class="ml-1 group-hover:text-red-600 transition-colors"
             />
           </div>
           <div

@@ -446,7 +446,7 @@
     "totalAllocated":"Total asignado",
     "totalSupply":"Suministro total",
     "totalValue":"Valor total",
-    "trade":"Comercio",
+    "swap":"Comercio",
     "tradeEarns":"Este comercio te hace ganar",
     "tradeFromWeth":"Comercio desde WETH",
     "tradeGaslessToggle":{

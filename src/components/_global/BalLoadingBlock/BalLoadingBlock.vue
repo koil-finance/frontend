@@ -3,7 +3,6 @@
 </template>
 
 <script lang="ts">
-import useDarkMode from '@/composables/useDarkMode';
 import { defineComponent, computed } from 'vue';
 
 export default defineComponent({
@@ -20,13 +19,8 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { darkMode } = useDarkMode();
-
     const bgClass = computed(() => {
       if (props.white) return 'shimmer-white';
-      if (darkMode.value) {
-        return props.darker ? 'shimmer-dark-mode-darker' : 'shimmer-dark-mode';
-      }
       return props.darker ? 'shimmer-light-mode-darker' : 'shimmer-light-mode';
     });
 
@@ -57,9 +51,9 @@ export default defineComponent({
 }
 
 .shimmer-white {
-  --startColor: rgba(255, 255, 255, 0.1);
-  --midColor: rgba(255, 255, 255, 0.2);
-  --endColor: rgba(255, 255, 255, 0.1);
+  --startColor: #fef7e5;
+  --midColor: #f6ecd1;
+  --endColor: #fef7e5;
 
   animation: shimmerBackground 10s infinite;
   background: linear-gradient(
@@ -72,9 +66,9 @@ export default defineComponent({
 }
 
 .shimmer-light-mode {
-  --startColor: theme('colors.gray.50');
-  --midColor: theme('colors.gray.100');
-  --endColor: theme('colors.gray.50');
+  --startColor: #fef7e5;
+  --midColor: #f6ecd1;
+  --endColor: #fef7e5;
 
   animation: shimmerBackground 10s infinite;
   background: linear-gradient(
@@ -87,9 +81,9 @@ export default defineComponent({
 }
 
 .shimmer-light-mode-darker {
-  --startColor: theme('colors.gray.100');
-  --midColor: theme('colors.gray.200');
-  --endColor: theme('colors.gray.100');
+  --startColor: #fef7e5;
+  --midColor: #f6ecd1;
+  --endColor: #fef7e5;
 
   animation: shimmerBackground 10s infinite;
   background: linear-gradient(
@@ -102,9 +96,9 @@ export default defineComponent({
 }
 
 .shimmer-dark-mode {
-  --startColor: theme('colors.gray.850');
-  --midColor: theme('colors.gray.800');
-  --endColor: theme('colors.gray.850');
+  --startColor: #fef7e5;
+  --midColor: #f6ecd1;
+  --endColor: #fef7e5;
 
   animation: shimmerBackground 10s infinite;
   background: linear-gradient(

@@ -154,16 +154,17 @@ watchEffect(() => {
     </template>
     <template v-slot:append>
       <BalStack align="center" horizontal spacing="none">
-        <BalIcon name="percent" size="sm" class="mt-3 text-gray-600" />
+        <BalIcon name="percent" size="sm" class="mt-2 text-gray-600" />
         <button
           @click="lockWeight(false)"
           :class="[
-            'ml-2 ease-color mt-1 text-gray-500 dark:text-gray-300 hover:text-red-800 dark:hover:text-red-800 flex items-center shadow-sm border dark:border-0 bg-gray-50 dark:bg-gray-850 rounded-full p-1 justify-center',
+            'ml-2 ease-color mt-2 text-black hover:text-red-800 flex items-center shadow-sm border rounded-full p-1 justify-center',
             {
               'text-red-500 dark:text-red-500': isLocked,
               'border-transparent': !isLocked
             }
           ]"
+          style="background: #FEF7E5; border-color: #D8CEB5;"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -185,8 +186,9 @@ watchEffect(() => {
         <button
           @click="emit('delete')"
           :class="[
-            'ml-2 ease-color mt-1 text-gray-500 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-500 flex items-center shadow-sm border dark:border-0 bg-gray-50 dark:bg-gray-850 rounded-full p-1 justify-center'
+            'ml-2 ease-color mt-2 text-black hover:text-red-500 flex items-center border rounded-full p-1 justify-center'
           ]"
+          style="background: #FEF7E5; border-color: #D8CEB5;"
         >
           <BalIcon name="trash-2" size="sm" />
         </button>

@@ -16,7 +16,11 @@
         :address="address"
         :size="size"
         @click="$emit('click', address)"
-        :class="['token-icon', { absolute: !wrap, relative: wrap }]"
+        :class="[
+          'token-icon',
+          'cursor-pointer',
+          { absolute: !wrap, relative: wrap }
+        ]"
         :style="{
           left: `${leftOffsetFor(i)}px`,
           zIndex: `${20 - i}`,
@@ -110,7 +114,7 @@ export default defineComponent({
 .token-icon {
   margin-left: -2px;
   @apply rounded-full overflow-hidden shadow-none;
-  @apply bg-white dark:bg-gray-850;
-  @apply border-2 border-white dark:border-gray-850 group-hover:border-gray-50 dark:group-hover:border-gray-800;
+  @apply bg-white dark:bg-gray-850 border;
+  border-color: #d8ceb5;
 }
 </style>

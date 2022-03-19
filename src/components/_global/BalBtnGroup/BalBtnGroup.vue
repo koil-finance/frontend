@@ -7,8 +7,18 @@
       outline
       size="sm"
       class="capitalize mr-2 w-18"
+      style="border-color: #dedde1; border-radius: 4px;"
+      :style="{
+        background: modelValue === option.value ? '#AC503F' : 'white',
+        boxShadow:
+          modelValue === option.value ? '0px 0px 0px 2px #F7CCC4' : 'none',
+        border:
+          modelValue === option.value
+            ? '1px solid #F7CCC4'
+            : '1px solid #dedde1'
+      }"
       v-bind="attrs_"
-      :color="modelValue === option.value ? 'red' : 'gray'"
+      :color="modelValue === option.value ? 'white' : 'black'"
     >
       {{ 'best' === option.label ? $t(option.label) : option.label }}
     </BalBtn>

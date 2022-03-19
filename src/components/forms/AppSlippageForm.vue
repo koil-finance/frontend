@@ -42,9 +42,7 @@ const isFixedSlippage = computed(() => {
 });
 
 const customInputClasses = computed(() => ({
-  'border border-red-500 text-red-500':
-    !isFixedSlippage.value || state.isCustomInput,
-  'border dark:border-gray-900': isFixedSlippage.value && !state.isCustomInput
+  'border active': !isFixedSlippage.value || state.isCustomInput
 }));
 
 /**
@@ -85,7 +83,10 @@ watch(
 </script>
 
 <template>
-  <div class="flex">
+  <div
+    class="flex"
+    style="font-family: 'DM Mono Light', monospace; font-weight: 300;"
+  >
     <BalBtnGroup
       :options="options"
       v-model="state.fixedSlippage"
@@ -110,6 +111,16 @@ watch(
 
 <style scoped>
 .custom-input {
-  @apply flex items-center px-1 rounded-lg shadow-inner;
+  @apply flex items-center px-1;
+  border-radius: 4px;
+  border: 1px solid #dedde1;
+  background: white;
+  color: black;
+}
+.custom-input.active {
+  border-color: #f7ccc4;
+  background: #ac503f;
+  color: white;
+  box-shadow: 0 0 0 2px #f7ccc4;
 }
 </style>

@@ -446,7 +446,7 @@
     "totalAllocated":"Total alloué",
     "totalSupply":"Total en circulation",
     "totalValue":"Valeur totale",
-    "trade":"Échanger",
+    "swap":"Échanger",
     "tradeEarns":"Ce métier vous rapporte",
     "tradeFromWeth":"Commerce de WETH",
     "tradeGaslessToggle":{

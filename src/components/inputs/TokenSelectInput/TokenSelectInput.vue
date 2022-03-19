@@ -67,10 +67,11 @@ function tokenFor(option: string): TokenInfo {
 </script>
 
 <template>
-  <div>
+  <div class="token-select-input-container">
     <div
       v-if="hasToken && options.length === 0"
       :class="['token-select-input selected group', { selectable: !fixed }]"
+      style="background: #FEF7E5; border: 1px solid #D8CEB5; border-radius: 10px; box-sizing: border-box; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 1px 1px rgba(0, 0, 0, 0.02);"
       @click="toggleModal"
     >
       <div class="w-8">
@@ -92,7 +93,8 @@ function tokenFor(option: string): TokenInfo {
         v-if="!fixed"
         name="chevron-down"
         size="sm"
-        class="text-red-500 group-hover:text-pink-500 ml-2"
+        class="ml-2"
+        style="color: black;"
       />
     </div>
     <BalDropdown
@@ -100,9 +102,13 @@ function tokenFor(option: string): TokenInfo {
       :options="options"
       minWidth="40"
       @selected="emit('update:modelValue', $event)"
+      class="dropdown"
     >
       <template #activator>
-        <div class="token-select-input selected group selectable">
+        <div
+          class="token-select-input selected group selectable"
+          style="background: #FEF7E5; border: 1px solid #D8CEB5; border-radius: 10px; box-sizing: border-box; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 1px 1px rgba(0, 0, 0, 0.02);"
+        >
           <div class="w-8">
             <BalAsset :address="token?.address" class="shadow" />
           </div>
@@ -118,11 +124,7 @@ function tokenFor(option: string): TokenInfo {
               })
             }}
           </span>
-          <BalIcon
-            name="chevron-down"
-            size="sm"
-            class="text-red-500 group-hover:text-pink-500 ml-2"
-          />
+          <BalIcon name="chevron-down" size="sm" class="text-black ml-2" />
         </div>
       </template>
       <template #option="{ option: address }">
@@ -148,6 +150,7 @@ function tokenFor(option: string): TokenInfo {
     <div
       v-else
       class="token-select-input unselected selectable"
+      style="background: #FEF7E5; color: black; border: 1px solid #D8CEB5; border-radius: 10px; box-sizing: border-box; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 1px 1px rgba(0, 0, 0, 0.02);"
       @click="toggleModal"
     >
       {{ $t('selectToken') }}

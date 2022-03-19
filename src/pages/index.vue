@@ -20,28 +20,37 @@
       <div class="mb-16" />
     </template>
 
+    <!--    <div class="px-4 lg:px-0">-->
+    <!--      <h3 class="mb-3">{{ $t('investmentPools') }}</h3>-->
+    <!--      <div-->
+    <!--        class="flex flex-col md:flex-row w-full justify-between items-end lg:items-center"-->
+    <!--      >-->
+    <!--        <TokenSearchInput-->
+    <!--          v-model="selectedTokens"-->
+    <!--          :loading="isLoadingPools"-->
+    <!--          @add="addSelectedToken"-->
+    <!--          @remove="removeSelectedToken"-->
+    <!--          class="w-full md:w-2/3"-->
+    <!--        />-->
+    <!--        <BalBtn-->
+    <!--          @click="navigateToCreatePool"-->
+    <!--          color="red"-->
+    <!--          size="sm"-->
+    <!--          :class="{ 'mt-4': upToMediumBreakpoint }"-->
+    <!--          :block="upToMediumBreakpoint"-->
+    <!--        >-->
+    <!--          {{ $t('createAPool.title') }}-->
+    <!--        </BalBtn>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
     <div class="px-4 lg:px-0">
-      <h3 class="mb-3">{{ $t('investmentPools') }}</h3>
-      <div
-        class="flex flex-col md:flex-row w-full justify-between items-end lg:items-center"
-      >
-        <TokenSearchInput
-          v-model="selectedTokens"
-          :loading="isLoadingPools"
-          @add="addSelectedToken"
-          @remove="removeSelectedToken"
-          class="w-full md:w-2/3"
-        />
-        <BalBtn
-          @click="navigateToCreatePool"
-          color="red"
-          size="sm"
-          :class="{ 'mt-4': upToMediumBreakpoint }"
-          :block="upToMediumBreakpoint"
-        >
-          {{ $t('createAPool.title') }}
-        </BalBtn>
-      </div>
+      <BalStack horizontal justify="between" align="center">
+        <h3>{{ $t('investmentPools') }}</h3>
+        <BalBtn @click="navigateToCreatePool" color="red" size="sm">{{
+          $t('createAPool.title')
+        }}</BalBtn>
+      </BalStack>
     </div>
 
     <PoolsTable
@@ -63,7 +72,7 @@ import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 
 import { EXTERNAL_LINKS } from '@/constants/links';
-import TokenSearchInput from '@/components/inputs/TokenSearchInput.vue';
+// import TokenSearchInput from '@/components/inputs/TokenSearchInput.vue';
 import PoolsTable from '@/components/tables/PoolsTable/PoolsTable.vue';
 import usePools from '@/composables/pools/usePools';
 import useWeb3 from '@/services/web3/useWeb3';
@@ -73,7 +82,7 @@ import useBreakpoints from '@/composables/useBreakpoints';
 
 export default defineComponent({
   components: {
-    TokenSearchInput,
+    // TokenSearchInput,
     PoolsTable
   },
 

@@ -50,11 +50,11 @@ function stateClasses(state: StepState): string {
     case StepState.Pending:
       return 'border-none dark:border-none text-yellow-500';
     case StepState.Active:
-      return 'border-purple-500 dark:border-purple-500 text-gradient';
+      return 'border-ac503f text-ac503f';
     case StepState.WalletOpen:
-      return 'border-purple-500 dark:border-purple-500 text-gradient';
+      return 'border-ac503f text-ac503f';
     default:
-      return 'dark:border-gray-700';
+      return 'border-d8ceb5';
   }
 }
 </script>
@@ -62,10 +62,7 @@ function stateClasses(state: StepState): string {
 <template>
   <div class="flex items-center">
     <div v-for="(step, i) in steps" :key="i" class="flex items-center">
-      <div
-        v-if="i !== 0"
-        :class="['h-px bg-gray-100 dark:bg-gray-700', `w-${spacerWidth}`]"
-      />
+      <div v-if="i !== 0" :class="['h-px bg-d8ceb5', `w-${spacerWidth}`]" />
       <BalTooltip :text="step.tooltip" width="44" textCenter>
         <template v-slot:activator>
           <div :class="['step', stateClasses(step.state)]">
@@ -97,5 +94,18 @@ function stateClasses(state: StepState): string {
 .step {
   @apply w-8 h-8 rounded-full border shadow font-medium;
   @apply flex items-center justify-center relative;
+}
+
+.text-ac503f {
+  color: #ac503f;
+}
+.border-ac503f {
+  border-color: #ac503f;
+}
+.border-d8ceb5 {
+  border-color: #d8ceb5;
+}
+.bg-d8ceb5 {
+  background: #d8ceb5;
 }
 </style>

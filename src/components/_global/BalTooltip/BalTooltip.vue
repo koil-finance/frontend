@@ -7,12 +7,13 @@
     v-bind="$attrs"
   >
     <slot name="activator">
-      <BalIcon name="info" :size="iconSize" class="text-gray-300" />
+      <BalIcon name="info" :size="iconSize" style="color: #d8ceb5;" />
     </slot>
   </button>
   <div
     ref="content"
-    class="tooltip text-xs text-black dark:text-white bg-white dark:bg-gray-800 font-medium shadow rounded-md border dark:border-gray-900 z-50"
+    class="tooltip text-xs text-black dark:text-white bg-white dark:bg-gray-800 font-medium shadow rounded-md border z-50"
+    style="border-color: #d8ceb5; background: #f2e9d1;"
     :class="tooltipClasses"
     v-bind="$attrs"
   >

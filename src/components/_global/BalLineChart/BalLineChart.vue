@@ -45,7 +45,6 @@ import ECharts from 'vue-echarts';
 import { last } from 'lodash';
 import useNumbers, { FNumOptions } from '@/composables/useNumbers';
 import useTailwind from '@/composables/useTailwind';
-import useDarkMode from '@/composables/useDarkMode';
 
 type AxisMoveEvent = {
   seriesIndex: number;
@@ -158,13 +157,8 @@ export default defineComponent({
     const change = ref(0);
     const { fNum2 } = useNumbers();
     const tailwind = useTailwind();
-    const { darkMode } = useDarkMode();
 
-    const axisColor = computed(() =>
-      darkMode.value
-        ? tailwind.theme.colors.gray['800']
-        : tailwind.theme.colors.gray['100']
-    );
+    const axisColor = computed(() => tailwind.theme.colors.gray['100']);
 
     // https://echarts.apache.org/en/option.html
     const chartConfig = computed(() => ({
@@ -187,13 +181,9 @@ export default defineComponent({
         },
         selected: props.legendState || {},
         textStyle: {
-          color: darkMode.value
-            ? tailwind.theme.colors.gray['100']
-            : tailwind.theme.colors.gray['800']
+          color: tailwind.theme.colors.gray['800']
         },
-        inactiveColor: darkMode.value
-          ? tailwind.theme.colors.gray['700']
-          : tailwind.theme.colors.gray['300']
+        inactiveColor: tailwind.theme.colors.gray['300']
       },
       // controlling the display of the X-Axis
       xAxis: {
@@ -254,12 +244,8 @@ export default defineComponent({
             show: false
           }
         },
-        backgroundColor: darkMode.value
-          ? tailwind.theme.colors.gray['800']
-          : tailwind.theme.colors.white,
-        borderColor: darkMode.value
-          ? tailwind.theme.colors.gray['900']
-          : tailwind.theme.colors.white,
+        backgroundColor: tailwind.theme.colors.white,
+        borderColor: tailwind.theme.colors.white,
         formatter: params => {
           return `
             <div class='flex flex-col font-body bg-white dark:bg-gray-850 dark:text-white'>

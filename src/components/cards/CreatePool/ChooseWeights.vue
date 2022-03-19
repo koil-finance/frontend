@@ -18,7 +18,6 @@ import { bnum } from '@/lib/utils';
 import AnimatePresence from '@/components/animate/AnimatePresence.vue';
 import useWeb3 from '@/services/web3/useWeb3';
 import { useI18n } from 'vue-i18n';
-import useDarkMode from '@/composables/useDarkMode';
 
 const emit = defineEmits(['update:height', 'trigger:alert']);
 
@@ -48,7 +47,6 @@ const { fNum2 } = useNumbers();
 const { nativeAsset, tokens } = useTokens();
 const { isWalletReady, toggleWalletSelectModal } = useWeb3();
 const { t } = useI18n();
-const { darkMode } = useDarkMode();
 
 /**
  * STATE
@@ -137,7 +135,7 @@ const weightColor = computed(() => {
   if (Number(totalWeight.value) > 100 || Number(totalWeight.value) <= 0) {
     return 'text-red-500';
   }
-  return darkMode.value ? 'text-gray-300' : 'text-gray-800';
+  return 'text-gray-800';
 });
 
 /**
@@ -306,18 +304,16 @@ function onAlertMountChange() {
     <BalCard shadow="xl" noBorder>
       <BalStack vertical spacing="sm">
         <BalStack vertical spacing="xs">
-          <span class="text-xs text-gray-700 dark:text-gray-500">{{
-            networkName
-          }}</span>
           <h5 class="font-bold dark:text-gray-300">
             {{ $t('createAPool.chooseTokenWeights') }}
           </h5>
         </BalStack>
-        <BalCard shadow="none" noPad>
+        <BalCard class="mb-3" shadow="none" noPad>
           <div ref="tokenWeightListWrapper">
             <div class="flex flex-col">
               <div
-                class="bg-gray-50 dark:bg-gray-850 w-full flex justify-between p-2 px-4"
+                class="w-full flex justify-between p-2 px-4"
+                style="background: #F6EDD2; border-bottom: 1px solid #D8CEB5;"
               >
                 <h6>{{ $t('token') }}</h6>
                 <h6>{{ $t('weight') }}</h6>
@@ -345,19 +341,27 @@ function onAlertMountChange() {
                 </div>
               </div>
 
-              <div class="p-3" ref="addTokenRowElement">
+              <div
+                class="p-3 border-b border-t"
+                ref="addTokenRowElement"
+                style="background: #F6EDD2; border-color: #D8CEB5;"
+              >
                 <BalBtn
                   :disabled="maxTokenAmountReached"
                   @click="addTokenToPool"
                   outline
-                  :color="maxTokenAmountReached ? 'gray' : 'red'"
+                  style="color: black; border: 1px solid #D8CEB5; border-radius: 10px; box-sizing: border-box; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 1px 1px rgba(0, 0, 0, 0.02);"
+                  :style="{
+                    background: maxTokenAmountReached ? '#DDD5BF' : '#FEF7E5'
+                  }"
                   size="sm"
                   >{{ $t('addToken') }}
                 </BalBtn>
               </div>
               <div
                 ref="totalsRowElement"
-                class="bg-gray-50 dark:bg-gray-850 w-full p-2 px-4"
+                class="w-full p-2 px-4"
+                style="background: #F6EDD2;"
               >
                 <div class="w-full flex justify-between">
                   <h6>{{ $t('totalAllocated') }}</h6>
@@ -441,7 +445,7 @@ function onAlertMountChange() {
         </AnimatePresence>
         <BalBtn
           block
-          color="gradient"
+          class="next-button"
           :disabled="isProceedDisabled"
           @click="handleProceed"
           >{{ walletLabel }}</BalBtn
@@ -450,3 +454,15 @@ function onAlertMountChange() {
     </BalCard>
   </div>
 </template>
+
+<style scoped>
+.next-button {
+  background: #ac503f;
+}
+.next-button:disabled {
+  background: rgba(172, 80, 63, 0.5);
+}
+.next-button:not(:disabled):hover {
+  background: #85392b;
+}
+</style>

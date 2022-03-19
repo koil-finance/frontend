@@ -47,6 +47,7 @@
         v-if="trading.isLoading.value"
         loading
         disabled
+        class="preview-button"
         :loading-label="
           trading.isGnosisTrade.value ? $t('loadingBestPrice') : $t('loading')
         "
@@ -56,7 +57,7 @@
         v-else
         :label="$t('preview')"
         :disabled="tradeDisabled"
-        color="gradient"
+        class="preview-button"
         block
         @click.prevent="handlePreviewButton"
       />
@@ -222,7 +223,7 @@ export default defineComponent({
       if (trading.wrapType.value === WrapType.Unwrap) {
         return `${t('unwrap')} ${trading.tokenOut.value.symbol}`;
       }
-      return t('trade');
+      return t('swap');
     });
 
     const error = computed(() => {
@@ -395,5 +396,15 @@ export default defineComponent({
 /* This is needed because the trade settings popover overflows */
 .card-container {
   overflow: unset;
+}
+
+.preview-button {
+  background: #ac503f;
+}
+.preview-button:disabled {
+  background: rgba(172, 80, 63, 0.5);
+}
+.preview-button:not(:disabled):hover {
+  background: #85392b;
 }
 </style>

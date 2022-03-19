@@ -98,6 +98,7 @@ const inputAttrs = computed(() => omit(attrs, 'class'));
   <div :class="['bal-text-input', parentClasses, borderRadiusClasses]">
     <div
       :class="['input-container', inputContainerClasses, borderRadiusClasses]"
+      style="background: #F6EDD2; border-color: #d8ceb5;"
     >
       <div v-if="$slots.header || label" :class="['header', headerClasses]">
         <slot name="header">

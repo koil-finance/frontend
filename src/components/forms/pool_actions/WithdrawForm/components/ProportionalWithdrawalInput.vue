@@ -153,6 +153,7 @@ onBeforeMount(() => {
         v-for="(token, address, i) in tokens"
         :key="address"
         class="p-4 last:mb-0"
+        style="border-color: #d8ceb5;"
       >
         <div class="flex items-center justify-between">
           <div class="flex items-center">
@@ -193,17 +194,21 @@ onBeforeMount(() => {
 
 <style scoped>
 .proportional-input {
-  @apply shadow-lg rounded-lg mb-4 w-full dark:bg-gray-800;
+  @apply shadow-lg rounded-lg mb-4 w-full;
+  background: #fef7e5;
 }
 
 .proportional-input-container {
-  @apply shadow-inner p-3 pb-1 rounded-lg;
-  @apply border border-gray-100 dark:border-gray-800;
+  @apply shadow-none p-3 pb-1 rounded-lg;
+  @apply border;
+  border-color: #d8ceb5;
+  background: #f5edd2;
 }
 
 .token-amounts {
   @apply rounded-lg;
-  @apply bg-gray-50 dark:bg-gray-800;
-  @apply border dark:border-gray-900 divide-y dark:divide-gray-900;
+  @apply border divide-y;
+  background: #fef7e5;
+  border-color: #d8ceb5;
 }
 </style>

@@ -1,9 +1,6 @@
 <template>
   <div class="flex items-center">
     <AppIcon />
-    <span class="mr-1 font-secondary text-xl font-semibold">
-      Koil Finance
-    </span>
   </div>
 </template>
 

@@ -28,14 +28,7 @@
     >
       <template v-slot:iconColumnHeader>
         <div class="flex items-center">
-          <img
-            v-if="darkMode"
-            :src="require('@/assets/images/icons/tokens_white.svg')"
-          />
-          <img
-            v-else
-            :src="require('@/assets/images/icons/tokens_black.svg')"
-          />
+          <img :src="require('@/assets/images/icons/tokens_black.svg')" />
         </div>
       </template>
       <template v-slot:iconColumnCell="pool">
@@ -97,7 +90,6 @@ import LiquidityAPRTooltip from '@/components/tooltips/LiquidityAPRTooltip.vue';
 import TokenPills from './TokenPills/TokenPills.vue';
 
 import { ColumnDefinition } from '@/components/_global/BalTable/BalTable.vue';
-import useDarkMode from '@/composables/useDarkMode';
 import useBreakpoints from '@/composables/useBreakpoints';
 import { isStableLike, isStablePhantom } from '@/composables/usePool';
 
@@ -143,7 +135,6 @@ export default defineComponent({
     const router = useRouter();
     const { t } = useI18n();
     const { trackGoal, Goals } = useFathom();
-    const { darkMode } = useDarkMode();
     const { upToLargeBreakpoint } = useBreakpoints();
 
     // DATA
@@ -245,7 +236,6 @@ export default defineComponent({
       FNumFormats,
 
       // computed
-      darkMode,
       upToLargeBreakpoint,
 
       // methods

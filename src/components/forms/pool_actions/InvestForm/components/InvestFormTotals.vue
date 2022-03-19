@@ -124,20 +124,23 @@ const optimizeBtnClasses = computed(() => ({
 
 <style scoped>
 .data-table {
-  @apply border dark:border-gray-900 rounded-lg divide-y dark:divide-gray-900;
+  @apply border rounded-lg divide-y;
+  border-color: #d8ceb5;
 }
 
 .data-table-row {
   @apply grid grid-cols-4 items-center;
-  @apply divide-x dark:divide-gray-900;
+  @apply divide-x;
+  border-color: #d8ceb5;
 }
 
 .data-table-number-col {
   @apply col-span-3 p-2 flex items-center justify-between;
+  border-color: #d8ceb5;
 }
 
 .total-row {
-  @apply text-lg font-bold rounded-t-lg dark:bg-gray-800;
+  @apply text-lg font-bold rounded-t-lg;
 }
 
 .price-impact-row {

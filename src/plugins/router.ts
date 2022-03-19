@@ -17,15 +17,9 @@ const routes: RouteRecordRaw[] = [
     component: HomePage
   },
   {
-    path: '/trade/:assetIn?/:assetOut?',
-    name: 'trade',
-    component: TradePage
-  },
-  {
     path: '/swap/:assetIn?/:assetOut?',
-    redirect: to => {
-      return `/trade${to.path.split('/swap')[1]}`;
-    }
+    name: 'swap',
+    component: TradePage
   },
   {
     path: '/pool/create',

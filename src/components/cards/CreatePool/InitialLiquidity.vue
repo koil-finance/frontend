@@ -218,6 +218,7 @@ function saveAndProceed() {
               align="center"
               spacing="sm"
               class="border rounded-lg p-2 mt-2"
+              style="border-color: #d8ceb5;"
             >
               <BalIcon name="zap" size="sm" class="mt-1 text-gray-500" />
               <span class="dark:text-gray-400 font-medium">
@@ -271,7 +272,7 @@ function saveAndProceed() {
             />
           </div>
         </BalStack>
-        <div class="p-3 border rounded-lg">
+        <div class="p-3 border rounded-lg" style="border-color: #d8ceb5;">
           <BalStack horizontal justify="between">
             <BalStack vertical spacing="none">
               <h6>{{ t('total') }}</h6>
@@ -286,7 +287,7 @@ function saveAndProceed() {
                     'text-sm font-semibold3',
                     {
                       'text-gray-400 dark:text-gray-600': areAmountsMaxed,
-                      'text-red-500 hover:text-red-50': !areAmountsMaxed
+                      'text-red-500 hover:text-red-600': !areAmountsMaxed
                     }
                   ]"
                   @click="handleMax"
@@ -337,10 +338,22 @@ function saveAndProceed() {
           :disabled="isExceedingWalletBalance || hasZeroAmount"
           @click="saveAndProceed"
           block
-          color="gradient"
+          class="next-button"
           >{{ t('preview') }}</BalBtn
         >
       </BalStack>
     </BalCard>
   </div>
 </template>
+
+<style scoped>
+.next-button {
+  background: #ac503f;
+}
+.next-button:disabled {
+  background: rgba(172, 80, 63, 0.5);
+}
+.next-button:not(:disabled):hover {
+  background: #85392b;
+}
+</style>

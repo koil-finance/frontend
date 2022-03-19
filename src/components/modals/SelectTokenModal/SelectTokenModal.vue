@@ -21,7 +21,7 @@
           @click="toggleSelectTokenList"
           class="flex items-center group cursor-pointer"
         >
-          <span class="text-xs text-gray-500">{{ $t('tokenLists') }}</span>
+          <span class="text-xs text-black">{{ $t('tokenLists') }}</span>
           <div class="flex items-center ml-2">
             <span class="mr-1 ">
               <img
@@ -34,7 +34,7 @@
             <BalIcon
               name="chevron-down"
               size="sm"
-              class="ml-1 text-red-500 group-hover:text-pink-500 group-focus:text-pink-500 transition-all duration-200 ease-out "
+              class="ml-1 transition-all duration-200 ease-out text-black"
             />
           </div>
         </div>
@@ -68,7 +68,7 @@
       </div>
     </template>
     <template v-else>
-      <div class="border-b dark:border-gray-700 flex">
+      <div class="border-b flex" style="border-color: rgba(216, 207, 182, 1);">
         <Search
           v-model="query"
           :placeholder="$t('searchBy')"
@@ -89,6 +89,7 @@
             <TokenListItem
               :token="token"
               :balanceLoading="dynamicDataLoading"
+              class="token-list-item"
             />
           </a>
         </RecycleScroller>
@@ -284,3 +285,9 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+.token-list-item:hover {
+  background: rgba(242, 233, 209, 1);
+}
+</style>

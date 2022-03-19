@@ -41,7 +41,12 @@ function amountShare(address: string): string {
 
 <template>
   <div class="token-amount-table">
-    <div v-for="(amount, address) in amountMap" :key="address" class="relative">
+    <div
+      v-for="(amount, address) in amountMap"
+      :key="address"
+      class="relative"
+      style="border-color: #d8ceb5;"
+    >
       <div class="token-amount-table-content">
         <BalAsset :address="address" :size="36" />
         <div class="flex flex-col ml-3">
@@ -63,7 +68,8 @@ function amountShare(address: string): string {
 
 <style scoped>
 .token-amount-table {
-  @apply shadow-lg border dark:border-gray-700 divide-y dark:divide-gray-700 rounded-lg;
+  @apply shadow-lg border divide-y rounded-lg;
+  border-color: #d8ceb5;
 }
 
 .token-amount-table-content {

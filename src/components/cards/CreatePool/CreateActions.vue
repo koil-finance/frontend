@@ -140,7 +140,8 @@ function handleSuccess(details: any): void {
     />
     <template v-if="createState.confirmed">
       <div
-        class="flex items-center justify-between text-gray-400 dark:text-gray-600 mt-4 text-sm"
+        class="flex items-center justify-between mt-4 text-sm"
+        style="color: #696353;"
       >
         <div class="flex items-center">
           <BalIcon name="clock" />
@@ -158,14 +159,14 @@ function handleSuccess(details: any): void {
           <BalIcon
             name="arrow-up-right"
             size="sm"
-            class="ml-px group-hover:text-pink-500 transition-colors"
+            class="ml-px group-hover:text-red-600 transition-colors"
           />
         </BalLink>
       </div>
       <BalBtn
         tag="router-link"
         :to="{ name: 'pool', params: { id: poolId } }"
-        color="gray"
+        style="border-color: #d8ceb5; color: #696353;"
         outline
         block
         class="mt-2"

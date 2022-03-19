@@ -169,7 +169,8 @@ function fiatLabelFor(index: number, address: string): string {
 <style scoped>
 .card-header {
   @apply p-4 w-full flex items-center justify-between;
-  @apply border-b dark:border-gray-700;
+  @apply border-b;
+  border-color: #d8ceb5;
 }
 
 .asset-row {

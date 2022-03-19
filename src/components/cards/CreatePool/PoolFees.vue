@@ -49,8 +49,8 @@ const { userNetworkConfig } = useWeb3();
  * COMPUTED
  */
 const customInputClasses = computed(() => ({
-  'border border-red-500 text-red-500': isCustomFee.value,
-  'border dark:border-gray-900': !isCustomFee.value
+  'border active': isCustomFee.value,
+  border: !isCustomFee.value
 }));
 
 const isProceedDisabled = computed(() => {
@@ -142,9 +142,6 @@ async function onChangeFeeController(val: string) {
     <BalCard shadow="xl" noBorder>
       <BalStack vertical>
         <BalStack vertical spacing="xs">
-          <span class="text-xs text-gray-700 dark:text-gray-500">{{
-            userNetworkConfig?.name
-          }}</span>
           <BalStack horizontal align="center" spacing="xs">
             <button
               @click="goBack"
@@ -283,7 +280,11 @@ async function onChangeFeeController(val: string) {
           <p class="text-gray-600 mb-1">
             {{ $t('createAPool.customAddressInfo') }}
           </p>
-          <BalStack vertical spacing="xs">
+          <BalStack
+            vertical
+            spacing="xs"
+            class="fee-controller-address-container"
+          >
             <BalTextInput
               v-model="thirdPartyFeeController"
               placeholder="0xBA4...2069"
@@ -302,7 +303,7 @@ async function onChangeFeeController(val: string) {
           :disabled="isProceedDisabled || isLoadingSimilarPools"
           type="submit"
           block
-          color="gradient"
+          class="next-button"
           @click="proceed"
           >{{ $t('next') }}</BalBtn
         >
@@ -313,6 +314,33 @@ async function onChangeFeeController(val: string) {
 
 <style scoped>
 .custom-input {
-  @apply flex items-center px-1 rounded-lg shadow-inner h-full;
+  @apply flex items-center px-1 h-full;
+  border-radius: 4px;
+  border: 1px solid #dedde1;
+  background: white;
+  color: black;
+}
+.custom-input.active {
+  border-color: #f7ccc4;
+  background: #ac503f;
+  color: white;
+  box-shadow: 0 0 0 2px #f7ccc4;
+}
+
+.next-button {
+  background: #ac503f;
+}
+.next-button:disabled {
+  background: rgba(172, 80, 63, 0.5);
+}
+.next-button:not(:disabled):hover {
+  background: #85392b;
+}
+</style>
+
+<style>
+.fee-controller-address-container .input-container {
+  @apply shadow-none px-2;
+  border-radius: 4px;
 }
 </style>

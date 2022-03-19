@@ -145,11 +145,6 @@ function getInitialWeightHighlightClass(tokenAddress: string) {
 <template>
   <BalStack vertical spacing="xs" class="mb-24">
     <BalCard shadow="xl" noBorder>
-      <BalStack vertical spacing="xs">
-        <span class="text-xs text-gray-700 dark:text-gray-500">{{
-          userNetworkConfig?.name
-        }}</span>
-      </BalStack>
       <BalStack vertical>
         <div class="flex items-center">
           <BalCircle
@@ -172,7 +167,10 @@ function getInitialWeightHighlightClass(tokenAddress: string) {
           </BalStack>
         </div>
         <BalCard shadow="none" noPad>
-          <div class="bg-gray-50 dark:bg-gray-700 p-2">
+          <div
+            class="p-2"
+            style="background: #F6EDD2; border-bottom: 1px solid #D8CEB5;"
+          >
             <h6 class="text-sm">
               {{ $t('createAPool.tokensAndSeedLiquidity') }}
             </h6>
@@ -228,7 +226,8 @@ function getInitialWeightHighlightClass(tokenAddress: string) {
           <BalStack
             horizontal
             justify="between"
-            class="p-4 border-t dark:border-gray-600"
+            class="p-4 border-t"
+            style="border-color: #D8CEB5;"
           >
             <h6>{{ $t('total') }}</h6>
             <h6>
@@ -237,7 +236,10 @@ function getInitialWeightHighlightClass(tokenAddress: string) {
           </BalStack>
         </BalCard>
         <BalCard shadow="none" noPad>
-          <div class="bg-gray-50 dark:bg-gray-700 p-2">
+          <div
+            class="p-2"
+            style="background: #F6EDD2; border-bottom: 1px solid #D8CEB5;"
+          >
             <h6 class="text-sm">{{ $t('summary') }}</h6>
           </div>
           <BalStack vertical spacing="xs" class="p-3">

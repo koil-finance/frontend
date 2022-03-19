@@ -10,7 +10,6 @@ import usePoolCreation from '@/composables/pools/usePoolCreation';
 import useBreakpoints from '@/composables/useBreakpoints';
 
 import { prominent } from 'color.js';
-import useDarkMode from '@/composables/useDarkMode';
 import useTailwind from '@/composables/useTailwind';
 import useNumbers, { FNumFormats } from '@/composables/useNumbers';
 
@@ -40,7 +39,6 @@ const {
   hasRestoredFromSavedState
 } = usePoolCreation();
 const { upToLargeBreakpoint } = useBreakpoints();
-const { darkMode } = useDarkMode();
 const { fNum2 } = useNumbers();
 const tailwind = useTailwind();
 const { resolve } = useUrls();
@@ -67,9 +65,7 @@ const chartConfig = computed(() => {
       selectedMode: false,
       top: 'bottom',
       textStyle: {
-        color: darkMode.value
-          ? tailwind.theme.colors.gray['300']
-          : tailwind.theme.colors.gray['850']
+        color: tailwind.theme.colors.gray['850']
       }
     },
     series: [
@@ -80,9 +76,7 @@ const chartConfig = computed(() => {
         stillShowZeroSum: true,
         showEmptyCircle: true,
         itemStyle: {
-          borderColor: darkMode.value
-            ? tailwind.theme.colors.gray['850']
-            : '#fff',
+          borderColor: '#fff',
           borderWidth: 5,
           borderCap: 'butt',
           borderJoin: 'round'

@@ -20,7 +20,9 @@
     "allPools": "All pools",    
     "allTokens": "All tokens",
     "and": "and",
-    "ammPlatform": "Unlock the power of Fuse with Koil Finance",
+    "unlockThePowerOfFuse": "Unlock the power of Fuse",
+    "though": "through",
+    "koil": "Koil",
     "amount": "Amount",
     "amountBeforeFees": "Amount before fees",
     "amountToInvest": "Amount to invest",
@@ -497,7 +499,7 @@
     "token": "Token",
     "tokenAlreadySelected": "Token Already Selected",
     "tokenInjected": "This token is injected",
-    "tokenLists": "Token lists",
+    "tokenLists": "Token List",
     "tokenPills": {
         "hiddenTokens": "+{0} tokens"
     },

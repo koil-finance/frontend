@@ -55,16 +55,15 @@ export default defineComponent({
   },
 
   setup(props) {
+    console.log(props);
     const borderClasses = computed(() => {
-      return 'border dark:border-gray-900';
+      return 'border border-d8ceb5';
     });
 
     const cardClasses = computed(() => {
       return {
         'rounded-lg': !props.square,
         'overflow-hidden': !props.exposeOverflow,
-        [`bg-white dark:bg-gray-${props.darkBgColor}`]: true,
-        [`shadow${props.shadow ? '-' : ''}${props.shadow}`]: true,
         [borderClasses.value]: !props.noBorder,
         'h-full': props.hFull
       };
@@ -115,6 +114,11 @@ export default defineComponent({
 <style scoped>
 .bal-card {
   @apply flex flex-col;
+  @apply rounded-b-none sm:rounded-b-lg;
+  box-shadow: 0 4px 20px #ede2d0;
+  border: 1px solid #d8ceb5;
+  background: #fef7e5;
+  border-radius: 10px;
 }
 
 .card-container {
@@ -138,5 +142,9 @@ export default defineComponent({
 
 .feature {
   @apply w-full h-40 bg-center bg-cover;
+}
+
+.border-d8ceb5 {
+  border-color: #d8ceb5;
 }
 </style>

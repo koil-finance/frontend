@@ -240,6 +240,7 @@ watchEffect(() => {
     @update:modelValue="emit('update:amount', $event)"
     @update:isValid="emit('update:isValid', $event)"
     @keydown="emit('keydown', $event)"
+    no-shadow
   >
     <template #prepend>
       <slot name="tokenSelect">
@@ -263,24 +264,19 @@ watchEffect(() => {
           class="flex items-center justify-between text-sm text-gray-500 leading-none"
         >
           <div v-if="!isWalletReady" />
-          <div v-else class="cursor-pointer flex items-center" @click="setMax">
+          <div
+            v-else
+            class="cursor-pointer flex items-center text-black"
+            @click="setMax"
+          >
             {{ balanceLabel ? balanceLabel : $t('balance') }}:
 
             <BalLoadingBlock v-if="balanceLoading" class="w-12 h-4 mx-2" />
             <span v-else class="mx-2">
               {{ fNum2(tokenBalance, FNumFormats.token) }}
             </span>
-
-            <template v-if="hasBalance && !noMax && !disableMax">
-              <span v-if="!isMaxed" class="text-red-500">
-                {{ $t('max') }}
-              </span>
-              <span v-else class="text-gray-400 dark:text-gray-600 lowercase">
-                {{ $t('maxed') }}
-              </span>
-            </template>
           </div>
-          <div>
+          <div class="text-black">
             <template v-if="hasAmount && hasToken">
               {{ fiatValue }}
               <span v-if="priceImpact" :class="priceImpactClass">
@@ -299,13 +295,13 @@ watchEffect(() => {
             </template>
           </div>
         </div>
-        <BalProgressBar
-          v-if="hasBalance && !noMax"
-          :width="maxPercentage"
-          :buffer-width="bufferPercentage"
-          :color="barColor"
-          class="mt-2"
-        />
+        <!--        <BalProgressBar-->
+        <!--          v-if="hasBalance && !noMax"-->
+        <!--          :width="maxPercentage"-->
+        <!--          :buffer-width="bufferPercentage"-->
+        <!--          :color="barColor"-->
+        <!--          class="mt-2"-->
+        <!--        />-->
         <div
           v-if="shouldShowTxBufferMessage"
           class="mt-2 text-yellow-600 dark:text-yellow-400 text-xs"

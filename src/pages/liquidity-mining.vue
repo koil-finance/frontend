@@ -202,6 +202,5 @@ export default defineComponent({
 <style>
 .lm-banner {
   @apply bg-cover bg-center;
-  background-image: url('/images/backgrounds/bg-header.svg');
 }
 </style>

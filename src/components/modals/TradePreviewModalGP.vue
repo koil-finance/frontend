@@ -4,7 +4,8 @@
       <BalCard noPad class="relative mb-6 overflow-auto">
         <template v-slot:header>
           <div
-            class="w-full p-3 border-b bg-gray-50 rounded-t-lg text-sm dark:border-gray-800 dark:bg-gray-800"
+            class="w-full p-3 border-b rounded-t-lg text-sm"
+            style="border-color: #d8ceb5; background: #f5edd2;"
           >
             <span>
               {{ $t('effectivePrice') }}
@@ -17,9 +18,7 @@
           </div>
         </template>
         <div>
-          <div
-            class="p-3 border-gray-100 border-b relative dark:border-gray-900"
-          >
+          <div class="p-3 border-b relative" style="border-color: #d8ceb5;">
             <div class="flex items-center">
               <div class="mr-3">
                 <BalAsset :address="trading.tokenIn.value.address" :size="36" />
@@ -31,7 +30,7 @@
                   }}
                   {{ trading.tokenIn.value.symbol }}
                 </div>
-                <div class="text-gray-500 dark:text-gray-400 text-sm">
+                <div class="text-sm" style="color: #696353;">
                   {{ tokenInFiatValue }}
                 </div>
               </div>
@@ -55,7 +54,7 @@
                   }}
                   {{ trading.tokenOut.value.symbol }}
                 </div>
-                <div class="text-gray-500 dark:text-gray-400 text-sm">
+                <div class="text-sm" style="color: #696353;">
                   {{ tokenOutFiatValue }}
                   <span
                     v-if="
@@ -77,7 +76,8 @@
       <BalCard noPad shadow="none" class="mb-3">
         <template v-slot:header>
           <div
-            class="p-3 flex w-full items-center justify-between border-b dark:border-gray-900"
+            class="p-3 flex w-full items-center justify-between border-b"
+            style="border-color: #d8ceb5; background: #f5edd2;"
           >
             <div class="font-semibold">
               {{ labels.tradeSummary.title }}
@@ -104,7 +104,7 @@
             </div>
           </div>
         </template>
-        <div class="p-3 text-sm">
+        <div class="p-3 text-sm border-b" style="border-color: #d8ceb5;">
           <div class="summary-item-row">
             <div>
               {{ labels.tradeSummary.totalBeforeFees }}
@@ -115,7 +115,7 @@
             <div>{{ $t('tradeSummary.gasCosts') }}</div>
             <div class="text-green-400">-{{ zeroFee }}</div>
           </div>
-          <div class="summary-item-row">
+          <div class="summary-item-row" style="color: #696353;">
             <div>{{ labels.tradeSummary.tradeFees }}</div>
             <div
               v-html="
@@ -131,16 +131,14 @@
           </div>
         </div>
         <template v-slot:footer>
-          <div
-            class="w-full p-3 rounded-b-lg bg-white text-sm dark:bg-gray-800"
-          >
+          <div class="w-full p-3 rounded-b-lg text-sm">
             <div class="summary-item-row font-medium">
               <div class="w-64">
                 {{ labels.tradeSummary.totalAfterFees }}
               </div>
               <div v-html="summary.totalWithoutSlippage" />
             </div>
-            <div class="summary-item-row text-gray-500 dark:text-gray-400">
+            <div class="summary-item-row" style="color: #696353;">
               <div class="w-64">
                 {{ labels.tradeSummary.totalWithSlippage }}
               </div>
@@ -338,8 +336,8 @@
         </BalTooltip>
       </div>
       <BalBtn
+        class="confirm-button"
         v-if="requiresGnosisRelayerApproval"
-        color="gradient"
         block
         @click.prevent="gnosisRelayerApproval.approve"
         :loading="
@@ -351,8 +349,8 @@
         {{ $t('approveGnosisRelayer') }}
       </BalBtn>
       <BalBtn
+        class="confirm-button"
         v-else-if="requiresLidoRelayerApproval"
-        color="gradient"
         block
         @click.prevent="lidoRelayerApproval.approve"
         :loading="
@@ -363,24 +361,23 @@
         {{ $t('approveLidoRelayer') }}
       </BalBtn>
       <BalBtn
+        class="confirm-button"
         v-else-if="requiresTokenApproval"
         :loading="tokenApproval.approving.value"
         :loading-label="`${$t('approving')} ${trading.tokenIn.value.symbol}...`"
-        color="gradient"
         block
         @click.prevent="approveToken"
       >
         {{ `${$t('approve')} ${trading.tokenIn.value.symbol}` }}
       </BalBtn>
       <BalBtn
+        class="confirm-button relative"
         v-else
-        color="gradient"
         block
         @click.prevent="trade"
         :loading="trading.isConfirming.value"
         :loading-label="$t('confirming')"
         :disabled="tradeDisabled"
-        class="relative"
       >
         {{ labels.confirmTrade }}
       </BalBtn>
@@ -889,8 +886,10 @@ export default defineComponent({
 </script>
 <style scoped>
 .arrow-down {
-  @apply absolute right-0 rounded-full border border-gray-100 flex items-center h-8 w-8 justify-center bg-white mr-3 dark:border-gray-800 dark:bg-gray-800;
+  @apply absolute right-0 flex items-center h-8 w-8 justify-center mr-3 border rounded-full;
   transform: translateY(-50%);
+  background: #fef7e5;
+  border-color: #d8ceb5;
 }
 
 .summary-item-row {
@@ -909,5 +908,15 @@ export default defineComponent({
 }
 .step-approved {
   @apply border-green-500 dark:border-green-500;
+}
+
+.confirm-button {
+  background: #ac503f;
+}
+.confirm-button:disabled {
+  background: rgba(172, 80, 63, 0.5);
+}
+.confirm-button:not(:disabled):hover {
+  background: #85392b;
 }
 </style>

@@ -2,12 +2,12 @@
   <BalPopover no-pad>
     <template v-slot:activator>
       <BalBtn
-        class="text-base"
+        class="text-base account-button"
         :class="{ btn: upToLargeBreakpoint }"
         :loading="isLoadingProfile"
         :loading-label="upToLargeBreakpoint ? '' : $t('connecting')"
         color="white"
-        :size="upToLargeBreakpoint ? 'md' : 'sm'"
+        :size="'md'"
         :circle="upToLargeBreakpoint"
       >
         <Avatar
@@ -72,3 +72,11 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+.account-button {
+  @apply h-11;
+  background: #ac503f;
+  color: white;
+}
+</style>

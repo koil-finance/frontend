@@ -157,10 +157,22 @@ function cancel() {
       </BalAlert>
       <BalStack horizontal expandChildren>
         <BalBtn @click="cancel" block outline>Cancel</BalBtn>
-        <BalBtn @click="proceed" v-if="!existingPool" block color="gradient"
+        <BalBtn @click="proceed" v-if="!existingPool" block class="next-button"
           >Continue anyway</BalBtn
         >
       </BalStack>
     </BalStack>
   </BalCard>
 </template>
+
+<style scoped>
+.next-button {
+  background: #ac503f;
+}
+.next-button:disabled {
+  background: rgba(172, 80, 63, 0.5);
+}
+.next-button:not(:disabled):hover {
+  background: #85392b;
+}
+</style>

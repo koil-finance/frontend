@@ -54,9 +54,10 @@ withDefaults(defineProps<Props>(), {
 .pill {
   @apply px-2 py-1;
   @apply rounded-lg;
-  @apply bg-gray-50 dark:bg-gray-600 text-gray-500 dark:text-gray-400;
+  @apply text-gray-500;
   @apply text-sm;
   @apply flex items-center;
+  background: #d8cfb6;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.07);
 }
 

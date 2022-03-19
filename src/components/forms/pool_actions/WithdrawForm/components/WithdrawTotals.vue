@@ -33,8 +33,10 @@ const priceImpactClasses = computed(() => ({
 <template>
   <div class="data-table">
     <div :class="['data-table-row', priceImpactClasses]">
-      <div class="p-2">{{ $t('priceImpact') }}</div>
-      <div class="data-table-number-col">
+      <div class="p-2" style="border-color: #d8ceb5;">
+        {{ $t('priceImpact') }}
+      </div>
+      <div class="data-table-number-col" style="border-color: #d8ceb5;">
         <div class="flex items-center">
           <BalLoadingBlock v-if="loadingAmountsOut" class="w-10 h-6" />
           <span v-else>{{ fNum2(priceImpact, FNumFormats.percent) }}</span>
@@ -63,14 +65,15 @@ const priceImpactClasses = computed(() => ({
 
 <style scoped>
 .data-table {
-  @apply rounded-lg divide-y dark:divide-gray-700;
+  @apply rounded-lg divide-y;
 }
 
 .data-table-row {
   @apply flex;
   @apply rounded-lg;
-  @apply divide-x dark:divide-gray-900 border dark:border-gray-900;
-  @apply dark:bg-gray-800;
+  @apply divide-x border;
+  border-color: #d8ceb5;
+  background: #fef7e5;
 }
 
 .data-table-number-col {

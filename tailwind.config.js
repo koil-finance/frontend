@@ -23,7 +23,7 @@ module.exports = {
   theme: {
     fontFamily: {
       body: [
-        'Inter-Variable',
+        'DM Sans',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
@@ -67,13 +67,16 @@ module.exports = {
           100: '#EAF0F6',
           200: '#E2E8F0',
           300: '#CBD5E1',
-          400: '#94A3B8',
-          500: '#64748B',
+          400: '#696353',
+          500: '#696353',
           600: '#475569',
           700: '#334155',
           800: '#1E293B',
           850: '#162031',
           900: '#0F172A'
+        },
+        'custom-gray': {
+          200: '#F3ECDA'
         },
         primary: {
           50: '#53555e',
@@ -118,8 +121,8 @@ module.exports = {
           300: '#fca5a5',
           400: '#f87171',
           500: '#ef4444',
-          600: '#dc2626',
-          700: '#ff2200',
+          600: '#AC503F',
+          700: '#b36454',
           800: '#991b1b',
           900: '#871200'
         },

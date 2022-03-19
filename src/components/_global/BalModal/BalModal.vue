@@ -103,11 +103,19 @@ export default defineComponent({
 }
 
 .modal-bg {
-  @apply absolute h-full w-full bg-black bg-opacity-80;
+  @apply absolute h-full w-full;
+  background: rgba(19, 18, 18, 0.45);
 }
 
 .modal-card {
-  @apply mx-auto h-full rounded-b-none sm:rounded-b-lg dark:border dark:border-gray-800;
+  @apply mx-auto h-full rounded-b-none sm:rounded-b-lg;
+  border: 1px solid #d8ceb5;
+  background: #fef7e5;
+  border-radius: 10px;
+
+  font-family: 'DM Sans', monospace;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .modal-bg-enter-active {
@@ -121,5 +129,13 @@ export default defineComponent({
 .modal-bg-enter-from,
 .modal-bg-leave-to {
   background: transparent;
+}
+</style>
+
+<style>
+.modal-card .header h4 {
+  font-family: 'DM Sans Medium', monospace;
+  font-style: normal;
+  font-weight: 500;
 }
 </style>

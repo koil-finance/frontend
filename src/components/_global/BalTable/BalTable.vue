@@ -16,12 +16,12 @@
           />
         </colgroup>
         <!-- header is rendered as a row - seperated by columns -->
-        <thead class="bg-white dark:bg-gray-900 z-10">
+        <thead class="z-10" style="background: #FEF7E5;">
           <th
             v-for="(column, columnIndex) in filteredColumns"
             :key="`header-${column.id}`"
             :class="[
-              'p-6 bg-white dark:bg-gray-850 headingShadow border-b dark:border-gray-900',
+              'p-6 headingShadow border-b border-d8ceb5',
               column.className,
               getHorizontalStickyClass(columnIndex),
               isColumnStuck ? 'isSticky' : '',
@@ -81,7 +81,8 @@
       />
       <div
         v-if="!isLoading && !tableData.length"
-        class="max-w-full bg-white dark:bg-gray-850 row-bg h-40 flex items-center justify-center text-gray-500"
+        class="max-w-full row-bg h-40 flex items-center justify-center text-gray-500"
+        style="background: #FEF7E5;"
       >
         {{ noResultsLabel || $t('noResults') }}
       </div>
@@ -112,10 +113,7 @@
             v-for="(dataItem, index) in tableData"
             :key="`tableRow-${index}`"
             @click="handleRowClick(dataItem)"
-            :class="[
-              'bg-white z-10 row-bg group',
-              { 'cursor-pointer': onRowClick }
-            ]"
+            :class="['z-10 row-bg group', { 'cursor-pointer': onRowClick }]"
           >
             <td
               v-for="(column, columnIndex) in filteredColumns"
@@ -191,7 +189,7 @@
               :class="[
                 getHorizontalStickyClass(0),
                 isColumnStuck ? 'isSticky' : '',
-                'text-left p-6 bg-white dark:bg-gray-850 border-t dark:border-gray-900 align-top'
+                'text-left p-6 bg-white dark:bg-gray-850 border-t border-d8ceb5 align-top'
               ]"
             >
               <span class="font-semibold text-left">
@@ -205,7 +203,7 @@
                 column.align === 'right' ? 'text-left' : 'text-right',
                 getHorizontalStickyClass(columnIndex + 1),
                 isColumnStuck ? 'isSticky' : '',
-                'p-6 bg-white dark:bg-gray-850 border-t dark:border-gray-900'
+                'p-6 bg-white dark:bg-gray-850 border-t border-d8ceb5'
               ]"
             >
               <slot v-if="column.totalsCell" :name="column.totalsCell"> </slot>
@@ -472,7 +470,7 @@ export default defineComponent({
 
 <style>
 .horizontalSticky {
-  @apply z-10 bg-white dark:bg-gray-850 group-hover:bg-gray-50 dark:group-hover:bg-gray-800 opacity-95 xs:opacity-90;
+  @apply z-10;
   position: sticky;
   left: 0;
   width: 100%;
@@ -495,13 +493,22 @@ export default defineComponent({
 }
 
 .row-bg {
-  @apply bg-white dark:bg-gray-850 hover:bg-gray-50 dark:hover:bg-gray-800;
+  background: #fef7e5;
+}
+
+tbody tr.row-bg:hover {
+  background: #f2e9d1;
 }
 
 .bal-table-pagination-btn {
   @apply flex items-center justify-center h-16 transition-all;
   @apply text-gray-500 font-medium hover:text-gray-800 dark:hover:text-gray-400;
-  @apply border-t dark:border-gray-900 rounded-b-lg;
-  @apply hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer;
+  @apply border-t border-d8ceb5 rounded-b-lg;
+  @apply cursor-pointer;
+  background: #fef7e5;
+}
+
+.border-d8ceb5 {
+  border-color: #d8ceb5;
 }
 </style>

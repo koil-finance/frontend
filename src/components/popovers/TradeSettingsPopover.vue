@@ -2,13 +2,16 @@
   <BalPopover>
     <template v-slot:activator>
       <BalBtn
+        fiat
         circle
+        noPadding
+        style="background: transparent; color: black; box-shadow: none;"
         color="white"
         size="sm"
         class="mb-2 text-gray-500 icon-spin-anim"
         @click="onActivatorClick"
       >
-        <BalIcon name="settings" size="sm" />
+        <BalIcon name="sliders" size="sm" />
       </BalBtn>
     </template>
 

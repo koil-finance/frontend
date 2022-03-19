@@ -3,34 +3,37 @@
     :show="isVisible"
     @close="$emit('close')"
     title="Connect to a wallet"
+    class="connect-wallet-modal"
   >
-    <p class="pb-3 text-sm">
+    <p class="pb-3 text-md">
       {{ $t('byConnectingWallet') }}
-      <router-link :to="{ name: 'terms-of-use' }" target="_blank">
+      <router-link
+        :to="{ name: 'terms-of-use' }"
+        target="_blank"
+        class="text-link"
+      >
         <span className="link">{{ $t('policies.termsOfUse') }}</span
         >,
       </router-link>
-      <router-link :to="{ name: 'cookies-policy' }" target="_blank">
+      <router-link
+        :to="{ name: 'cookies-policy' }"
+        target="_blank"
+        class="text-link"
+      >
         <span className="link">{{ $t('policies.cookiesPolicy') }}</span>
       </router-link>
       {{ $t('and') }}
-      <router-link :to="{ name: 'privacy-policy' }" target="_blank">
+      <router-link
+        :to="{ name: 'privacy-policy' }"
+        target="_blank"
+        class="text-link"
+      >
         <span className="link">{{ $t('policies.privacyPolicy') }}</span
         >.
       </router-link>
     </p>
     <WalletButton v-for="wallet in wallets" :wallet="wallet" :key="wallet" />
-    <div
-      class="
-        p-4
-        rounded-lg
-        bg-gradient-to-b
-        from-gray-50
-        dark:from-gray-900
-        to-gray-100
-        dark:to-gray-850
-      "
-    >
+    <div class="mt-4 modal-footer">
       <h6>{{ $t('newToFuse') }}</h6>
       <p class="text-sm">
         {{ $t('setUpFuseWallet') }}
@@ -69,3 +72,21 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+.modal-footer h6 {
+  font-family: 'DM Sans Medium', monospace;
+  font-style: normal;
+  font-weight: 500;
+}
+</style>
+
+<style>
+.text-link span,
+.modal-footer a {
+  font-family: 'DM Sans Medium', monospace;
+  font-style: normal;
+  font-weight: 500;
+  color: #ac503f;
+}
+</style>

@@ -238,7 +238,8 @@ watch(useNativeAsset, shouldUseNativeAsset => {
 
     <div
       v-if="highPriceImpact"
-      class="border dark:border-gray-700 rounded-lg p-2 pb-2 mt-4"
+      class="border rounded-lg p-2 pb-2 mt-4"
+      style="border-color: #d8ceb5;"
     >
       <BalCheckbox
         v-model="highPriceImpactAccepted"
@@ -246,6 +247,7 @@ watch(useNativeAsset, shouldUseNativeAsset => {
         name="highPriceImpactAccepted"
         size="sm"
         :label="$t('priceImpactAccept', [$t('depositing')])"
+        :noMargin="highPriceImpactAccepted"
       />
     </div>
 
@@ -262,7 +264,7 @@ watch(useNativeAsset, shouldUseNativeAsset => {
       <BalBtn
         v-else
         :label="$t('preview')"
-        color="gradient"
+        class="preview-button"
         :disabled="
           !hasAmounts ||
             !hasValidInputs ||
@@ -285,3 +287,15 @@ watch(useNativeAsset, shouldUseNativeAsset => {
     </teleport>
   </div>
 </template>
+
+<style scoped>
+.preview-button {
+  background: #ac503f;
+}
+.preview-button:disabled {
+  background: rgba(172, 80, 63, 0.5);
+}
+.preview-button:not(:disabled):hover {
+  background: #85392b;
+}
+</style>

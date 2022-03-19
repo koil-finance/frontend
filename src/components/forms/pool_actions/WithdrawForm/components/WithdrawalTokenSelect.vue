@@ -136,6 +136,11 @@ function handleSelected(newToken: string): void {
 }
 
 .selected {
-  @apply bg-gray-50 dark:bg-gray-700 text-black dark:text-white;
+  @apply text-black border;
+  background: #fef7e5;
+  border-color: #d8ceb5;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 8px, rgba(0, 0, 0, 0.02) 0px 1px 1px !important;
 }
 </style>

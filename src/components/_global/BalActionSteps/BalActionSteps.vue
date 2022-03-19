@@ -193,7 +193,7 @@ async function handleTransaction(
       <BalBtn
         v-if="!lastActionState.confirmed"
         :disabled="props.disabled"
-        color="gradient"
+        class="rbutton"
         :loading="currentAction.pending || isLoading"
         :loading-label="isLoading ? loadingLabel : currentAction.loadingLabel"
         block
@@ -204,3 +204,15 @@ async function handleTransaction(
     </BalStack>
   </div>
 </template>
+
+<style scoped>
+.rbutton {
+  background: #ac503f;
+}
+.rbutton:disabled {
+  background: rgba(172, 80, 63, 0.5);
+}
+.rbutton:not(:disabled):hover {
+  background: #85392b;
+}
+</style>

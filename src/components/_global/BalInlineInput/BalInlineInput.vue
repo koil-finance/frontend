@@ -174,7 +174,7 @@ function handleBlur(e: HtmlInputEvent) {
 
 <style scoped>
 .input-container {
-  @apply bg-white dark:bg-gray-800;
+  background: #fef7e5;
 }
 
 .input-group {

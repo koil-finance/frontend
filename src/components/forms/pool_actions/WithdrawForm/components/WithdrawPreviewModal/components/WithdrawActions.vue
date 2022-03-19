@@ -229,9 +229,7 @@ watch(blockNumber, async () => {
   <div>
     <BalActionSteps v-if="!withdrawalState.confirmed" :actions="actions" />
     <template v-else>
-      <div
-        class="flex items-center justify-between text-gray-400 dark:text-gray-600 mt-4 text-sm"
-      >
+      <div class="flex items-center justify-between text-gray-400 mt-4 text-sm">
         <div class="flex items-center">
           <BalIcon name="clock" />
           <span class="ml-2">
@@ -255,7 +253,7 @@ watch(blockNumber, async () => {
       <BalBtn
         tag="router-link"
         :to="{ name: 'pool', params: { id: route.params.id } }"
-        color="gray"
+        style="background-color: #d8ceb5; color: #696353;"
         outline
         block
         class="mt-2"

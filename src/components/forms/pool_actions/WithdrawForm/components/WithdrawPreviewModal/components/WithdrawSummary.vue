@@ -29,7 +29,7 @@ const { currency } = useUserSettings();
     <h6 class="p-2">
       {{ $t('summary') }}
     </h6>
-    <div class="flex flex-col py-2">
+    <div class="flex flex-col py-2" style="border-color: #d8ceb5;">
       <div class="summary-table-row">
         <div class="summary-table-label">
           {{ $t('total') }}
@@ -63,7 +63,8 @@ const { currency } = useUserSettings();
 
 <style scoped>
 .summary-table {
-  @apply border dark:border-gray-700 divide-y dark:divide-gray-700 rounded-lg mt-4;
+  @apply border divide-y rounded-lg mt-4;
+  border-color: #d8ceb5;
 }
 
 .summary-table-row {

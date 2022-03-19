@@ -202,7 +202,8 @@ watch(blockNumber, async () => {
     <BalActionSteps :actions="actions" />
     <template v-if="investmentState.confirmed">
       <div
-        class="flex items-center justify-between text-gray-400 dark:text-gray-600 mt-4 text-sm"
+        class="flex items-center justify-between mt-4 text-sm"
+        style="color: #696353;"
       >
         <div class="flex items-center">
           <BalIcon name="clock" />
@@ -227,7 +228,7 @@ watch(blockNumber, async () => {
       <BalBtn
         tag="router-link"
         :to="{ name: 'pool', params: { id: route.params.id } }"
-        color="gray"
+        style="background-color: #d8ceb5; color: #696353;"
         outline
         block
         class="mt-2"

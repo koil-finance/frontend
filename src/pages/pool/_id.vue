@@ -11,7 +11,8 @@
             <div
               v-for="([address, tokenMeta], i) in titleTokens"
               :key="i"
-              class="mt-2 mr-2 flex items-center px-2 h-10 bg-gray-50 dark:bg-gray-850 rounded-lg"
+              class="mt-2 mr-2 flex items-center px-2 h-10 rounded-lg text-white"
+              style="background: #AC503F;"
             >
               <BalAsset :address="address" />
               <span class="ml-2">
@@ -19,7 +20,7 @@
               </span>
               <span
                 v-if="!isStableLikePool"
-                class="font-medium text-gray-400 text-xs mt-px ml-1"
+                class="font-medium text-white text-xs mt-px ml-1"
               >
                 {{
                   fNum2(tokenMeta.weight, {
@@ -30,16 +31,16 @@
                 }}
               </span>
             </div>
-            <BalChip
-              v-if="pool.dynamic.isNewPool"
-              color="red"
-              size="sm"
-              class="uppercase mt-2 mr-2"
-              :outline="false"
-            >
-              {{ $t('new') }}
-            </BalChip>
-            <LiquidityAPRTooltip :pool="pool" class="-ml-1 mt-1" />
+            <!--            <BalChip-->
+            <!--              v-if="pool.dynamic.isNewPool"-->
+            <!--              color="red"-->
+            <!--              size="sm"-->
+            <!--              class="uppercase mt-2 mr-2"-->
+            <!--              :outline="false"-->
+            <!--            >-->
+            <!--              {{ $t('new') }}-->
+            <!--            </BalChip>-->
+            <!--            <LiquidityAPRTooltip :pool="pool" class="-ml-1 mt-1" />-->
           </div>
           <div class="flex items-center mt-2">
             <div v-html="poolFeeLabel" class="text-sm text-gray-600" />
@@ -151,7 +152,7 @@
 import { defineComponent, reactive, toRefs, computed, watch } from 'vue';
 import * as PoolPageComponents from '@/components/contextual/pages/pool';
 import GauntletIcon from '@/components/images/icons/GauntletIcon.vue';
-import LiquidityAPRTooltip from '@/components/tooltips/LiquidityAPRTooltip.vue';
+// import LiquidityAPRTooltip from '@/components/tooltips/LiquidityAPRTooltip.vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 import useNumbers from '@/composables/useNumbers';
@@ -172,8 +173,8 @@ interface PoolPageData {
 export default defineComponent({
   components: {
     ...PoolPageComponents,
-    GauntletIcon,
-    LiquidityAPRTooltip
+    GauntletIcon
+    // LiquidityAPRTooltip
   },
 
   setup() {

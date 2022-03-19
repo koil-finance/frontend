@@ -125,7 +125,8 @@ onBeforeMount(() => {
 
     <div
       v-if="highPriceImpact"
-      class="border dark:border-gray-700 rounded-lg p-2 pb-2 mt-4"
+      class="border rounded-lg p-2 pb-2 mt-4"
+      style="border-color: #d8ceb5;"
     >
       <BalCheckbox
         v-model="highPriceImpactAccepted"
@@ -133,6 +134,7 @@ onBeforeMount(() => {
         name="highPriceImpactAccepted"
         size="sm"
         :label="$t('priceImpactAccept', [$t('withdrawing')])"
+        :noMargin="highPriceImpactAccepted"
       />
     </div>
 
@@ -158,7 +160,7 @@ onBeforeMount(() => {
       <BalBtn
         v-else
         :label="$t('preview')"
-        color="gradient"
+        class="preview-button"
         :disabled="
           !hasAmounts ||
             !hasValidInputs ||
@@ -180,3 +182,15 @@ onBeforeMount(() => {
     </teleport>
   </div>
 </template>
+
+<style scoped>
+.preview-button {
+  background: #ac503f;
+}
+.preview-button:disabled {
+  background: rgba(172, 80, 63, 0.5);
+}
+.preview-button:not(:disabled):hover {
+  background: #85392b;
+}
+</style>

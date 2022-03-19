@@ -9,7 +9,6 @@ import { FullPool, PoolSnapshots } from '@/services/balancer/subgraph/types';
 import { HistoricalPrices } from '@/services/coingecko/api/price.service';
 
 import useTailwind from '@/composables/useTailwind';
-import useDarkMode from '@/composables/useDarkMode';
 import { isStablePhantom } from '@/composables/usePool';
 
 /**
@@ -40,16 +39,11 @@ const MIN_CHART_VALUES = 7;
 const store = useStore();
 const { t } = useI18n();
 const tailwind = useTailwind();
-const { darkMode } = useDarkMode();
 
 /**
  * COMPUTED
  */
-const hodlColor = computed(() =>
-  darkMode.value
-    ? tailwind.theme.colors.gray['600']
-    : tailwind.theme.colors.black
-);
+const hodlColor = computed(() => tailwind.theme.colors.black);
 
 const chartColors = computed(() => [
   tailwind.theme.colors.green['400'],
@@ -190,28 +184,30 @@ function getPoolValue(amounts: string[], prices: number[]) {
 
 <template>
   <BalLoadingBlock v-if="loading || appLoading" class="h-96" />
-  <div class="chart mr-n2 ml-n2" v-else-if="history.length >= MIN_CHART_VALUES">
-    <BalLineChart
-      :data="series"
-      :isPeriodSelectionEnabled="false"
-      :axisLabelFormatter="{
-        yAxis: {
-          style: 'unit',
-          unit: 'percent',
-          maximumFractionDigits: 2,
-          minimumFractionDigits: 2,
-          fixedFormat: true
-        }
-      }"
-      :color="chartColors"
-      height="96"
-      :showLegend="true"
-      :legendState="{ HODL: false }"
-      hide-y-axis
-    />
-  </div>
-  <BalBlankSlate v-else class="h-96">
-    <BalIcon name="bar-chart" />
-    {{ $t('insufficientData') }}
-  </BalBlankSlate>
+  <BalCard v-else>
+    <div class="chart mr-n2 ml-n2" v-if="history.length >= MIN_CHART_VALUES">
+      <BalLineChart
+        :data="series"
+        :isPeriodSelectionEnabled="false"
+        :axisLabelFormatter="{
+          yAxis: {
+            style: 'unit',
+            unit: 'percent',
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2,
+            fixedFormat: true
+          }
+        }"
+        :color="chartColors"
+        height="96"
+        :showLegend="true"
+        :legendState="{ HODL: false }"
+        hide-y-axis
+      />
+    </div>
+    <BalBlankSlate v-else class="h-96">
+      <BalIcon name="bar-chart" />
+      {{ $t('insufficientData') }}
+    </BalBlankSlate>
+  </BalCard>
 </template>

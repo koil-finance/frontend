@@ -85,7 +85,7 @@ const fiatTotal = computed(() => {
         tag="router-link"
         :to="{ name: 'invest' }"
         :label="$t('invest')"
-        color="gradient"
+        class="deposit-button"
         block
       />
       <BalBtn
@@ -93,8 +93,31 @@ const fiatTotal = computed(() => {
         :to="{ name: 'withdraw' }"
         :label="$t('withdraw.label')"
         :disabled="!hasBpt"
+        class="withdraw-button"
         block
       />
     </div>
   </BalCard>
 </template>
+
+<style scoped>
+.deposit-button {
+  background: #ac503f;
+}
+.deposit-button:disabled {
+  background: rgba(172, 80, 63, 0.5);
+}
+.deposit-button:not(:disabled):hover {
+  background: #85392b;
+}
+
+.withdraw-button {
+  background: black;
+}
+.withdraw-button:disabled {
+  background: rgba(0, 0, 0, 0.5);
+}
+.withdraw-button:not(:disabled):hover {
+  background: #1c1b1b;
+}
+</style>

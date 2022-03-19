@@ -1,5 +1,5 @@
 <template>
-  <div :class="`app-nav-toggle bg-gray-50 dark:bg-gray-${darkModeBg}`">
+  <div :class="`app-nav-toggle bg-custom-gray-200`">
     <router-link
       :to="{ name: 'home' }"
       :class="[
@@ -11,14 +11,14 @@
       {{ $t('invest') }}
     </router-link>
     <router-link
-      :to="{ name: 'trade' }"
+      :to="{ name: 'swap' }"
       :class="[
         'toggle-link px-6 rounded-r-lg',
         { [activeClasses]: isTradePage }
       ]"
       @click="trackGoal(Goals.ClickNavTrade)"
     >
-      {{ $t('trade') }}
+      {{ $t('swap') }}
     </router-link>
   </div>
 </template>
@@ -31,14 +31,10 @@ import { useRoute } from 'vue-router';
 export default defineComponent({
   name: 'AppNavToggle',
 
-  props: {
-    darkModeBg: { type: String, default: '800' }
-  },
-
   setup() {
     const route = useRoute();
-    const activeClasses = 'gradient-red-l-to-r text-white rounded-lg';
-    const isTradePage = computed(() => route.name === 'trade');
+    const activeClasses = 'active text-white rounded-lg';
+    const isTradePage = computed(() => route.name === 'swap');
     const { trackGoal, Goals } = useFathom();
 
     return {
@@ -53,11 +49,20 @@ export default defineComponent({
 
 <style scoped>
 .app-nav-toggle {
-  @apply h-10 flex items-center rounded-lg shadow;
-  font-variation-settings: 'wght' 600;
+  @apply h-11 flex items-center;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: 400;
+  color: #6d697f;
+  padding: 3px;
 }
 
 .toggle-link {
   @apply h-full flex items-center;
+  border-radius: 10px;
+}
+
+.toggle-link.active {
+  background: #ac503f;
 }
 </style>
