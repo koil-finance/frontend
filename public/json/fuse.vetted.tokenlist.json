@@ -9,9 +9,17 @@
   "version": {
     "major": 1,
     "minor": 0,
-    "patch": 1
+    "patch": 2
   },
   "tokens": [
+    {
+      "address": "0xBb641Fc19a0700d992a04Dc6b2F2DD5A9b609559",
+      "chainId": 122,
+      "name": "Koil",
+      "symbol": "KOIL",
+      "decimals": "18",
+      "logoURI": "https://raw.githubusercontent.com/koil-finance/frontend/master/public/images/logos/logo.svg"
+    },
     {
       "address": "0x0BE9e53fd7EDaC9F859882AfdDa116645287C629",
       "chainId": 122,
