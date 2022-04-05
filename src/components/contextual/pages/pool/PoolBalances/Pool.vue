@@ -1,10 +1,5 @@
 <template>
-  <BalCard
-    class="overflow-x-auto whitespace-nowrap"
-    :square="upToLargeBreakpoint"
-    :noBorder="upToLargeBreakpoint"
-    noPad
-  >
+  <div class="overflow-x-auto whitespace-nowrap">
     <BalTable
       :columns="columns"
       :data="tableData"
@@ -52,7 +47,7 @@
         </div>
       </template>
     </BalTable>
-  </BalCard>
+  </div>
 </template>
 
 <script lang="ts">

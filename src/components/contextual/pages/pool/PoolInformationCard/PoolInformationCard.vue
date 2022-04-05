@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useStore } from 'vuex';
 import { zip } from 'lodash';
@@ -10,6 +10,10 @@ import { HistoricalPrices } from '@/services/coingecko/api/price.service';
 
 import useTailwind from '@/composables/useTailwind';
 import { isStablePhantom } from '@/composables/usePool';
+
+import { default as NavTabs } from './components/NavTabs';
+import { PoolChart } from '../';
+import { PoolBalances } from '../';
 
 /**
  * TYPES
@@ -32,6 +36,22 @@ const props = withDefaults(defineProps<Props>(), {
  * STATE
  */
 const MIN_CHART_VALUES = 7;
+
+const TABS = [
+  {
+    id: 'chart',
+    name: 'Chart'
+  },
+  {
+    id: 'pool-composition',
+    name: 'Pool Composition'
+  },
+  // {
+  //   id: 'my-pool-balances',
+  //   name: 'My Pool Balances'
+  // }
+];
+const CURRENT_TAB = ref('chart');
 
 /**
  * COMPOSABLES
@@ -183,28 +203,27 @@ function getPoolValue(amounts: string[], prices: number[]) {
 </script>
 
 <template>
-  <div class="chart mr-n2 ml-n2" v-if="history.length >= MIN_CHART_VALUES">
-    <BalLineChart
-      :data="series"
-      :isPeriodSelectionEnabled="false"
-      :axisLabelFormatter="{
-        yAxis: {
-          style: 'unit',
-          unit: 'percent',
-          maximumFractionDigits: 2,
-          minimumFractionDigits: 2,
-          fixedFormat: true
-        }
-      }"
-      :color="chartColors"
-      height="96"
-      :showLegend="true"
-      :legendState="{ HODL: false }"
-      hide-y-axis
+  <BalLoadingBlock v-if="loading || appLoading" class="h-112" />
+  <BalCard noPad v-else>
+    <NavTabs :tabs="TABS" :current-tab="CURRENT_TAB" @tab-switched="(newTabId) => CURRENT_TAB = newTabId" classes="mx-4 mt-4"></NavTabs>
+
+    <PoolChart
+      v-if="CURRENT_TAB === 'chart'"
+      :pool="props.pool"
+      :historicalPrices="props.historicalPrices"
+      :snapshots="props.snapshots"
+      class="mt-16 mx-4 mb-4"
     />
-  </div>
-  <BalBlankSlate v-else class="h-96">
-    <BalIcon name="bar-chart" />
-    {{ $t('insufficientData') }}
-  </BalBlankSlate>
+    <PoolBalances
+      v-if="CURRENT_TAB === 'pool-composition'"
+      :pool="props.pool"
+      class="mt-14"
+    />
+<!--    <PoolBalances-->
+<!--      v-if="CURRENT_TAB === 'my-pool-balances'"-->
+<!--      :pool="props.pool"-->
+<!--      only-user-balances-->
+<!--      class="mt-14"-->
+<!--    />-->
+  </BalCard>
 </template>

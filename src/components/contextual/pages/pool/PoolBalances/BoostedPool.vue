@@ -69,22 +69,7 @@ function getTokenShare(address: string) {
 </script>
 
 <template>
-  <BalCard
-    class="overflow-x-auto whitespace-nowrap"
-    :square="upToLargeBreakpoint"
-    :noBorder="upToLargeBreakpoint"
-    noPad
-  >
-    <template #header>
-      <div
-        class="p-4 w-full grid grid-cols-3 border-b dark:border-gray-900 text-base font-semibold"
-      >
-        <div>{{ $t('token') }}</div>
-        <div class="justify-self-end">{{ $t('balance') }}</div>
-        <div class="justify-self-end">{{ $t('value') }}</div>
-      </div>
-    </template>
-
+  <div class="overflow-x-auto whitespace-nowrap">
     <div class="p-4 -mt-2">
       <div v-for="address in pool.tokenAddresses" :key="address" class="py-4">
         <BalBreakdown
@@ -120,5 +105,5 @@ function getTokenShare(address: string) {
         </BalBreakdown>
       </div>
     </div>
-  </BalCard>
+  </div>
 </template>

@@ -76,7 +76,7 @@ const fiatTotal = computed(() => {
     <BalBtn
       v-if="!isWalletReady"
       :label="$t('connectWallet')"
-      color="gradient"
+      class="connect-wallet-button"
       block
       @click="toggleWalletSelectModal"
     />
@@ -101,6 +101,16 @@ const fiatTotal = computed(() => {
 </template>
 
 <style scoped>
+.connect-wallet-button {
+  background: #ac503f;
+}
+.connect-wallet-button:disabled {
+  background: rgba(172, 80, 63, 0.5);
+}
+.connect-wallet-button:not(:disabled):hover {
+  background: #85392b;
+}
+
 .deposit-button {
   background: #ac503f;
 }

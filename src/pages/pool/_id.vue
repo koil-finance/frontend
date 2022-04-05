@@ -96,7 +96,7 @@
       <div class="col-span-2 order-2 lg:order-1">
         <div class="grid grid-cols-1 gap-y-8">
           <div class="px-1 lg:px-0">
-            <PoolChart
+            <PoolInformationCard
               :pool="pool"
               :historicalPrices="historicalPrices"
               :snapshots="snapshots"
@@ -105,11 +105,6 @@
           </div>
           <div class="mb-4 px-1 lg:px-0">
             <PoolStatCards :pool="pool" :loading="loadingPool" />
-          </div>
-
-          <div class="mb-4">
-            <h4 v-text="$t('poolComposition')" class="px-4 lg:px-0 mb-4" />
-            <PoolBalancesCard :pool="pool" :loading="loadingPool" />
           </div>
 
           <div>
