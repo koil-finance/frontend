@@ -1,0 +1,7 @@
+/*
+  Strict-Transport-Security: max-age=63072000
+  Referrer-Policy: origin
+  Content-Security-Policy-Report-Only: default-src 'self'; report-uri https://o0.ingest.sentry.io/api/0/security/?sentry_key=examplePublicKey
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
