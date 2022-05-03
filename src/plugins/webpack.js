@@ -1,7 +1,15 @@
+const CopyPlugin = require('copy-webpack-plugin');
 const SentryWebpackPlugin = require('@sentry/webpack-plugin');
 const { version } = require('../../package.json');
 
-const plugins = [];
+const plugins = [
+  new CopyPlugin([
+    {
+      from: '_headers',
+      to: './'
+    }
+  ])
+];
 
 if (process.env.VUE_APP_SENTRY_AUTH_TOKEN) {
   const release = `frontend-v2@${version}`;
